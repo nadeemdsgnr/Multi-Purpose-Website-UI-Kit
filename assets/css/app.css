@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+:root{
+    --bs-body-font-family:'Poppins', sans-serif;
+    --body-font-family:'Poppins', sans-serif;
+    --body-bg-color:#f3f2f7;
+    --text-light:#a0a0a0;
+    --text-dark:#212529;
+    --text-white:#fff;
+    --primary-color:#ab53db;
+    --primary-bgcolor:#eddff6;
+}
+* {
+    margin: 0;
+}
+body{
+    background-color: var(--body-bg-color);
+}
+.wrapper{
+    padding: 20px;
+}
+.card{
+    border-radius: 30px;
+    border: 0;
+}
+.text-dull{
+    color: var(--text-light);
+}
+.dropdown-item.active i, .dropdown-item:active i{
+    color: var(--text-white);
+}
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.32s;
+    -moz-transition: all 0.32s;
+    -ms-transition: all 0.32s;
+    -o-transition: all 0.32s;
+    transition: all 0.32s;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(1rem) scaleY(0);
+    transform-origin: top;
+    right: -5px;
+    top: 10px;
+}
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0rem) scaleY(1);
+}
+.fs-small {
+    font-size: 14px;
+}
+
+/* Sidebar Style Start */
+.sidebar{
+    width: 260px;
+}
+.sidebar .nav-pills .nav-link{
+    color: var(--text-dark);
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+.sidebar .nav-pills .nav-link i{
+    color: var(--text-light);
+    font-size: 22px;
+}
+.sidebar .nav-pills .nav-link:hover,
+.sidebar .nav-pills .nav-link:hover i{
+    color: var(--primary-color);
+}
+.sidebar .nav-pills .nav-link.active,
+.sidebar .nav-pills .nav-link.active i, 
+.sidebar .nav-pills .show>.nav-link{
+    background-color: var(--primary-bgcolor);
+    color: var(--primary-color);
+}
+.sidebar .copyrights{
+    padding: 20px;
+}
+.sidebar .copyrights p {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Sidebar Style Ends */
+
+/* Header Style Start */
+
+.dropdown-menu.dropdownUser {
+    font-size: 14px;
+    width: 200px;
+}
+.dropdown-menu.dropdownUser i.bx{
+    font-size: 18px;
+}
+.dropdown-menu.dropdownNotifications,
+.dropdown-menu.dropdownMessages {
+    font-size: 14px;
+    width: 300px;
+    padding: 0px;
+}
+.dropdown-menu.dropdownNotifications .list-group-item .closeNotification{
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #212529;
+    padding: 0 5px;
+    background: 0 0;
+    border: 0;
+}
+.dropdown-menu.dropdownNotifications .list-group{
+    max-height: 300px;
+    overflow-y: auto;
+}
+header .icon .count{
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: #ffbb54;
+    color: var(--text-white);
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 12px;
+    font-family: var(--body-font-family);
+    width: 20px;
+    height: 20px;
+    line-height: 8px;
+}
+.dropdown-menu.dropdownMessages .list-group-item .profile{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+}
+.dropdown-menu.dropdownMessages .list-group{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Header Style Ends */
+
+/* Charts Style Starts */
+.card.chart{
+    height: 100%;
+}
+/* Charts Style Ends */
