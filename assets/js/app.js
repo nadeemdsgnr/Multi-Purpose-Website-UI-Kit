@@ -67,6 +67,7 @@ var options = {
   var options = {
     series: [44, 55, 41, 17, 15],
     chart: {
+    width: '100%',
     fontFamily:'Poppins',
     type: 'donut',
   },
@@ -77,6 +78,9 @@ var options = {
     style: {
         fontSize: '18px'
     }
+  },
+  legend: {
+    position: 'bottom'
   },
   responsive: [{
     breakpoint: 480,
@@ -146,7 +150,7 @@ var options = {
   }]
   };
 
-  var chart = new ApexCharts(document.querySelector("#samplechart"), options);
+  var chart = new ApexCharts(document.querySelector("#serverchart"), options);
   chart.render();
   // Sample Chart Ends
 
@@ -155,11 +159,11 @@ var options = {
     series: [
         {
             name: "Server Request",
-            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+            data: [10, 41, 35, 51, 49, 62]
         },
         {
             name: "Web Server",
-            data: [ 31, 10, 45, 78, 35, 21, 45, 70, 90]
+            data: [ 31, 10, 45, 78, 35, 21]
         }
     ],
     chart: {
@@ -191,11 +195,11 @@ var options = {
     },
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#serverchart"), options);
+  var chart = new ApexCharts(document.querySelector("#samplechart"), options);
   chart.render();
   
   // Server Request Chart Ends
