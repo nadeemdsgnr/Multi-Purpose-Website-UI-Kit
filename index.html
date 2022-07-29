@@ -12,75 +12,77 @@
     <link href="assets/css/app.css" rel="stylesheet">
   </head>
   <body>
-    <div class="wrapper d-flex">
-        <div class="sidebar">
-            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card">
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card shadow">
             <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-                <img class="img-fluid px-4 py-3" src="assets/images/logo.png" alt="Logo">
+                <img class="img-fluid px-4 py-2" src="assets/images/logo.png" alt="Logo">
             </a>
             <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-              <li class="nav-item">
-                <a href="#" class="nav-link active d-flex align-items-center" aria-current="page">
-                <i class='bx bx-home-alt me-2'></i>
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-envelope me-2'></i>
-                  Email
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-user me-2'></i>
-                  Contacts
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-dollar-circle me-2'></i>
-                  Crypto
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-dashboard me-2'></i>
-                  Kanban
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-file-blank me-2'></i>
-                  Invoicing
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-wallet-alt me-2'></i>
-                  Banking
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-folder me-2'></i>
-                  File Manager
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-calendar-alt me-2'></i>
-                  Calendar
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <i class='bx bxs-pencil me-2'></i>
-                  Todo List
-                </a>
-              </li>
-            </ul>
+            <div class="nav-wrapper" data-simplebar>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active d-flex align-items-center" aria-current="page">
+                  <i class='bx bx-home-alt me-2'></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Contacts
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dollar-circle me-2'></i>
+                    Crypto
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dashboard me-2'></i>
+                    Kanban
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-file-blank me-2'></i>
+                    Invoicing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-wallet-alt me-2'></i>
+                    Banking
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-folder me-2'></i>
+                    File Manager
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-calendar-alt me-2'></i>
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-pencil me-2'></i>
+                    Todo List
+                  </a>
+                </li>
+              </ul>
+            </div>
             <hr>
             <div class="copyrights">
                 <p class="fw-semibold text-black">Wisoft Modern Dashboard</p>
@@ -93,9 +95,24 @@
             <div class="container-fluid">
                 <header>
                     <div class="row">
+                      <div class="col-auto my-auto pe-0">
+                        <a role="button" id="sidebarToggle">
+                          <svg class="ham" viewBox="0 0 100 100" width="60" onclick="this.classList.toggle('active')">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 h -40" />
+                            <path
+                                  class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+                          </svg>
+                        </a>
+                      </div>
                         <div class="col col-md-6 me-md-auto">
-                            <p class="fs-2 mb-1">Dashboard</p>
-                            <span class="text-dull">Welcome to Modern Admin Dashboard</span>
+                            <h1 class="heading mb-1">Dashboard</h1>
+                            <span class="sub-heading text-dull">Welcome to Modern Admin Dashboard</span>
                         </div>
                         <div class="col col-md-4 justify-content-end align-items-center d-flex">
                             <div class="icon fs-4 px-2 position-relative">
@@ -165,7 +182,7 @@
                                       <div class="col-12 small ps-2">We talk about a project...</div>
                                     </a>
                                     <div class="d-flex align-items-center justify-content-center py-3">
-                                      <button class="btn bg-primary border-0 text-white fs-small">View All Messages</button>
+                                      <button class="btn bg-primary border-0 text-white fs-s">View All Messages</button>
                                     </div>
                                   </div>
                                 </ul>
@@ -275,25 +292,175 @@
                 </header>
                 <div class="chart-cards">
                   <div class="row py-4">
-                    <div class="col-md-4">
-                      <div class="card chart">
-
+                    <div class="col-lg-6 col-xl-4">
+                      <div class="card chart shadow-sm">
                         <div id="memorychart" class="px-2 py-3 pe-3"></div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="card chart">
+                    <div class="col-lg-6 col-xl-4 mt-4 mt-lg-0">
+                      <div class="card chart shadow-sm">
                         <div id="visitorchart" class="py-3"></div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="card chart">
+                    <div class="col-lg-6 col-xl-4 mt-4 mt-xl-0">
+                      <div class="card chart shadow-sm">
                         <div id="samplechart" class="px-2 py-3 pe-3"></div>
                       </div>
                     </div>
-                    <div class="col-md-12 mt-4">
-                      <div class="card chart">
+                    <div class="col-lg-6 col-xl-12 mt-4">
+                      <div class="card chart shadow-sm">
                         <div id="serverchart" class="px-2 py-3 pe-3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-slider">
+                  <div class="">
+                    <div class="swiper mySwiper">
+                      <div class="row">
+                        <div class="col-8">
+                          <h2 class="heading">User Review</h2>
+                          <p class="sub-heading text-dull">Lorem ipsum sit donor.</p>
+                        </div>
+                        <div class="col-4 align-items-center d-flex justify-content-end">
+                          <div class="cta-navigation d-flex align-items-center justify-content-between">
+                            <div class="swiper-button-prev me-5"></div>
+                            <div class="swiper-button-next"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-wrapper container m-0 p-0">
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Jons Sena</p>
+                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Kevin Hunt</p>
+                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Isabbelle</p>
+                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Don Mark</p>
+                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Jons Sena</p>
+                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Kevin Hunt</p>
+                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Isabbelle</p>
+                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card testimonial p-4">
+                            <div class="d-flex align-items-center">
+                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
+                              <div class="ms-3">
+                                <p class="name mb-0">Don Mark</p>
+                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
+                              </div>
+                            </div>
+                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
+                            <div class="button">
+                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
+                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 text-center pt-2">
+                        <div class="swiper-pagination"></div>
                       </div>
                     </div>
                   </div>

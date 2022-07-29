@@ -8,6 +8,7 @@
     --text-white:#fff;
     --primary-color:#ab53db;
     --primary-bgcolor:#eddff6;
+    --sidebar-width:260px;
 }
 * {
     margin: 0;
@@ -17,6 +18,25 @@ body{
 }
 .wrapper{
     padding: 20px;
+    position: relative;
+}
+.wrapper .sidebar + .main {
+    margin-left: var(--sidebar-width);
+}
+.wrapper .main{
+    transition: all .3s ease-out;
+}
+.heading {
+    font-size: 28px;
+}
+.sub-heading {
+    font-size: 14px;
+}
+.wrapper .sidebar.hide{
+    left: calc(-1 * var(--sidebar-width));
+}
+.wrapper .sidebar.hide + .main {
+    margin-left: 0;
 }
 .card{
     border-radius: 30px;
@@ -46,17 +66,88 @@ body{
     opacity: 1;
     transform: translateY(0rem) scaleY(1);
 }
-.fs-small {
+.fs-s {
     font-size: 14px;
 }
+.fs-xs{
+    font-size: 12px;
+}
+.btna{
+    display: inline-block;
+    position: relative;
+}
+.btna:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 0px;
+    right: 0px;
+    transition: 0.3s;
+    font-size: 26px;
+    line-height: 23px;
+    font-weight: 300;
+}
+.btna:hover:after {
+    opacity: 1;
+    right: -14px;
+}
+
+/* Hamburger Icon Animation Start */
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(180deg);
+}
+.ham.active {
+    transform: rotate(180deg);
+}
+.line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#0051a4;
+    stroke-width:5.5;
+    stroke-linecap:round;
+}
+.ham .top {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+.ham .bottom {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+.ham.active .top {
+    /* stroke-dasharray: 40 82;
+    stroke-dashoffset: 0px; */
+    stroke-dasharray: 21 82;
+    stroke-dashoffset: -20;
+}
+.ham.active .bottom {
+    /* stroke-dasharray: 40 82;
+    stroke-dashoffset: 0px; */
+    stroke-dasharray: 21 82;
+    stroke-dashoffset: -20;
+}
+/* Hamburger Icon Animation Ends */
 
 /* Sidebar Style Start */
 .sidebar{
-    width: 260px;
+    width: var(--sidebar-width);
+    position: fixed;
+    transition: all .3s ease-out;
+    left: 20px;
+}
+.sidebar .nav-wrapper{
+    max-height: 55vh;
 }
 .sidebar .nav-pills .nav-link{
     color: var(--text-dark);
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 15px;
 }
 .sidebar .nav-pills .nav-link i{
@@ -74,17 +165,16 @@ body{
     color: var(--primary-color);
 }
 .sidebar .copyrights{
-    padding: 20px;
+    padding: 0 20px;
 }
 .sidebar .copyrights p {
     font-size: 12px;
     color: var(--text-light);
+    margin-bottom: 0.25rem;
 }
-
 /* Sidebar Style Ends */
 
 /* Header Style Start */
-
 .dropdown-menu.dropdownUser {
     font-size: 14px;
     width: 200px;
@@ -113,6 +203,10 @@ body{
     max-height: 300px;
     overflow-y: auto;
 }
+.dropdown-menu.dropdownNotifications .list-group-item:first-child{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
 header .icon .count{
     position: absolute;
     top: -5px;
@@ -137,7 +231,6 @@ header .icon .count{
     max-height: 200px;
     overflow-y: auto;
 }
-
 /* Header Style Ends */
 
 /* Charts Style Starts */
@@ -145,3 +238,24 @@ header .icon .count{
     height: 100%;
 }
 /* Charts Style Ends */
+
+/* Testimonial Slider Style Starts */
+.testimonial-slider .cta-navigation .swiper-button-next,
+.testimonial-slider .cta-navigation .swiper-button-prev,
+.testimonial-slider .swiper-pagination{
+    position: unset;
+    margin: 0;
+}
+.testimonial-slider .cta-navigation .swiper-button-next::after,
+.testimonial-slider .cta-navigation .swiper-button-prev::after{
+    font-size: 28px;
+    font-weight: 800;
+}
+.testimonial-slider .card.testimonial{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.testimonial-slider .card.testimonial:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+/* Testimonial Slider Style Ends */

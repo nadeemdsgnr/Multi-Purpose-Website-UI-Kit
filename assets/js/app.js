@@ -152,10 +152,10 @@ var options = {
 
   var chart = new ApexCharts(document.querySelector("#serverchart"), options);
   chart.render();
-  // Sample Chart Ends
+// Sample Chart Ends
 
-  // Server Request Chart Start
-  var options = {
+// Server Request Chart Start
+var options = {
     series: [
         {
             name: "Server Request",
@@ -197,9 +197,54 @@ var options = {
   xaxis: {
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   }
-  };
+};
 
-  var chart = new ApexCharts(document.querySelector("#samplechart"), options);
-  chart.render();
+var chart = new ApexCharts(document.querySelector("#samplechart"), options);
+chart.render();
   
-  // Server Request Chart Ends
+// Server Request Chart Ends
+
+// Testimonial Slider Start
+
+const swiper = new Swiper('.mySwiper', {
+  // slidesPerView: "4",
+  spaceBetween: 30,
+  // autoplay: {
+  //   delay: 3000,
+  // },
+
+  pagination: {
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  
+  // Responsive breakpoints
+  breakpoints: {
+    1400: {
+      slidesPerView: "4"
+    },
+    1200: {
+      slidesPerView: "3"
+    },
+    992: {
+      slidesPerView: "2",
+      spaceBetween: "20"
+    },
+    640: {
+      slidesPerView: "1",
+      spaceBetween: "0"
+    }
+  }
+
+});
+// Testimonial Slider End
+
+// Sidebar Toggle
+$('#sidebarToggle').click( function(){
+  $("#sidebar").toggleClass("hide")
+});
+// Sidebar Toggle End
