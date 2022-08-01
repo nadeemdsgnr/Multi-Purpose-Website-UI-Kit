@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link href="assets/css/app.css" rel="stylesheet">
   </head>
   <body>
@@ -22,13 +21,13 @@
             <div class="nav-wrapper" data-simplebar>
               <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                  <a href="index.html" class="nav-link active d-flex align-items-center" aria-current="page">
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
                   <i class='bx bx-home-alt me-2'></i>
                     Dashboard
                   </a>
                 </li>
                 <li>
-                  <a href="app-products.html" class="nav-link d-flex align-items-center">
+                  <a href="app-products.html" class="nav-link d-flex align-items-center active">
                       <i class='bx bxs-envelope me-2'></i>
                     Products
                   </a>
@@ -117,8 +116,7 @@
                         </a>
                       </div>
                         <div class="col col-md-6 me-md-auto my-auto">
-                            <h1 class="heading mb-1">Dashboard</h1>
-                            <span class="sub-heading text-dull d-none">Welcome to Modern Admin Dashboard</span>
+                            <h1 class="heading mb-1">Products</h1>
                         </div>
                         <div class="col col-md-4 justify-content-end align-items-center d-flex">
                             <div class="icon fs-4 px-2 position-relative">
@@ -296,179 +294,291 @@
                         </div>
                     </div>
                 </header>
-                <div class="chart-cards">
-                  <div class="row py-3">
-                    <div class="col-lg-6 col-xl-4">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="memorychart" class="px-2 py-3 pe-3 overflow-hidden"></div>
-                      </div>
+                <div class="product-wrapper py-3 position-relative">
+                  <div class="filtersbar" id="filtersbar">
+                    <div class="d-flex flex-column flex-shrink-0 pt-3 bg-white card shadow rounded" data-simplebar>
+                      <div class="d-flex mb-3 px-3">
+                        <div class="flex-grow-1">
+                            <h5 class="fs-16">Filters</h5>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="#" class="fs-s text-dull text-decoration-underline clearall" id="clearall">Clear All</a>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-xl-4 mt-4 mt-lg-0">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="visitorchart" class="py-3 overflow-hidden"></div>
-                      </div>
+                    <div class="tags d-inline-block px-3">
+                        <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2" href="#">T-Shirts | 
+                          <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button></a>
+                        <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2" href="#">Boat | 
+                          <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button></a>
+                        <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2" href="#">JBL | 
+                          <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button></a>
+                        <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2" href="#">20% or more | 
+                          <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button></a>
+                        <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2" href="#">4 & Above Star | 
+                          <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button></a>
                     </div>
-                    <div class="col-lg-6 col-xl-4 mt-4 mt-xl-0">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="samplechart" class="px-2 py-3 pe-3 overflow-hidden"></div>
+                    <hr>
+                    <div class="accordion accordion-flush filter-accordion">
+                      <div class="card-body border-bottom pt-0 px-3">
+                          <div>
+                              <p class="text-muted text-uppercase mb-2">Products</p>
+                              <ul class="list-unstyled mb-0 filter-list">
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Grocery</h5>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Fashion</h5>
+                                          </div>
+                                          <div class="flex-shrink-0 ms-2">
+                                              <span class="badge bg-light text-dark fw-normal">5</span>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Watches</h5>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Electronics</h5>
+                                          </div>
+                                          <div class="flex-shrink-0 ms-2">
+                                              <span class="badge bg-light text-dark fw-normal">5</span>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Furniture</h5>
+                                          </div>
+                                          <div class="flex-shrink-0 ms-2">
+                                              <span class="badge bg-light text-dark fw-normal">6</span>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Automotive Accessories</h5>
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Appliances</h5>
+                                          </div>
+                                          <div class="flex-shrink-0 ms-2">
+                                              <span class="badge bg-light text-dark fw-normal">7</span>
+                                          </div>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="#" class="d-flex py-1 align-items-center text-decoration-none">
+                                          <div class="flex-grow-1">
+                                              <h5 class="fs-s mb-0 listname text-dark fw-normal">Kids</h5>
+                                          </div>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
                       </div>
+                      <div class="card-body border-bottom px-3">
+                          <p class="text-muted text-uppercase fs-12 fw-medium mb-4">Price</p>
+                          <div id="product-price-range"></div>
+                          <div class="formCost d-flex gap-2 align-items-center mt-3">
+                              <input class="form-control form-control-sm" type="text" id="minCost" value="0"> <span class="text-dark fw-normal fs-s">to</span> <input class="form-control form-control-sm" type="text" id="maxCost" value="1000">
+                          </div>
+                      </div>
+                      <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingBrands">
+                              <button class="accordion-button bg-transparent shadow-none px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBrands" aria-expanded="true" aria-controls="collapseBrands">
+                                  <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge" style="display: none;">0</span>
+                              </button>
+                          </h2>
+
+                          <div id="collapseBrands" class="accordion-collapse collapse show" aria-labelledby="headingBrands">
+                              <div class="accordion-body text-body pt-0 px-3">
+                                  <div class="search-box search-box-sm">
+                                      <input type="text" class="form-control bg-light border-0 fs-s fw-light" id="searchBrandsList" placeholder="Search Brands...">
+                                      <i class="ri-search-line search-icon"></i>
+                                  </div>
+                                  <div class="d-flex flex-column gap-2 mt-3 filter-check">
+                                      <div class="form-check" style="display: block;">
+                                          <input class="form-check-input" type="checkbox" value="Boat" id="productBrandRadio5" checked="">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productBrandRadio5">Boat</label>
+                                      </div>
+                                      <div class="form-check" style="display: block;">
+                                          <input class="form-check-input" type="checkbox" value="OnePlus" id="productBrandRadio4">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productBrandRadio4">OnePlus</label>
+                                      </div>
+                                      <div class="form-check" style="display: block;">
+                                          <input class="form-check-input" type="checkbox" value="Realme" id="productBrandRadio3">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productBrandRadio3">Realme</label>
+                                      </div>
+                                      <div class="form-check" style="display: block;">
+                                          <input class="form-check-input" type="checkbox" value="Sony" id="productBrandRadio2">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productBrandRadio2">Sony</label>
+                                      </div>
+                                      <div class="form-check" style="display: block;">
+                                          <input class="form-check-input" type="checkbox" value="JBL" id="productBrandRadio1" checked="">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productBrandRadio1">JBL</label>
+                                      </div>
+
+                                      <div>
+                                          <button type="button" class="btn btn-link text-decoration-none text-uppercase fw-medium p-0 text-dull fs-s">1,235
+                                              More</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- end accordion-item -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingDiscount">
+                              <button class="accordion-button bg-transparent shadow-none px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDiscount" aria-expanded="true" aria-controls="collapseDiscount">
+                                  <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge" style="display: none;">0</span>
+                              </button>
+                          </h2>
+                          <div id="collapseDiscount" class="accordion-collapse collapse show" aria-labelledby="headingDiscount">
+                              <div class="accordion-body text-body pt-1 px-3">
+                                  <div class="d-flex flex-column gap-2 filter-check">
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="50% or more" id="productdiscountRadio6">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio6">50% or more</label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="40% or more" id="productdiscountRadio5">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio5">40% or more</label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="30% or more" id="productdiscountRadio4">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio4">
+                                              30% or more
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="20% or more" id="productdiscountRadio3" checked="">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio3">
+                                              20% or more
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="10% or more" id="productdiscountRadio2">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio2">
+                                              10% or more
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Less than 10%" id="productdiscountRadio1">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productdiscountRadio1">
+                                              Less than 10%
+                                          </label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- end accordion-item -->
+                      <div class="accordion-item rounded">
+                          <h2 class="accordion-header" id="headingRating">
+                              <button class="accordion-button bg-transparent shadow-none collapsed px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRating" aria-expanded="false" aria-controls="collapseRating">
+                                  <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge" style="display: none;">0</span>
+                              </button>
+                          </h2>
+
+                          <div id="collapseRating" class="accordion-collapse collapse" aria-labelledby="headingRating">
+                              <div class="accordion-body text-body px-3 pt-0">
+                                  <div class="d-flex flex-column gap-2 filter-check">
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="4 &amp; Above Star" id="productratingRadio4" checked="">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productratingRadio4">
+                                              <span class="text-muted">
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star"></i>
+                                              </span> 4 &amp; Above
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="3 &amp; Above Star" id="productratingRadio3">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productratingRadio3">
+                                              <span class="text-muted">
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                              </span> 3 &amp; Above
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="2 &amp; Above Star" id="productratingRadio2">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productratingRadio2">
+                                              <span class="text-muted">
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                              </span> 2 &amp; Above
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="1 Star" id="productratingRadio1">
+                                          <label class="form-check-label text-dark fw-normal fs-s" for="productratingRadio1">
+                                              <span class="text-muted">
+                                                  <i class="bx bxs-star text-warning"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                                  <i class="bx bxs-star"></i>
+                                              </span> 1
+                                          </label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- end accordion-item -->
                     </div>
-                    <div class="col-lg-6 col-xl-12 mt-4">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="serverchart" class="px-2 py-3 pe-3 overflow-hidden"></div>
-                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="testimonial-slider">
-                  <div class="">
-                    <div class="swiper mySwiper">
-                      <div class="row">
-                        <div class="col-8">
-                          <h2 class="heading">User Review</h2>
-                          <p class="sub-heading text-dull">Lorem ipsum sit donor.</p>
-                        </div>
-                        <div class="col-4 align-items-center d-flex justify-content-end">
-                          <div class="cta-navigation d-flex align-items-center justify-content-between">
-                            <div class="swiper-button-prev me-5"></div>
-                            <div class="swiper-button-next"></div>
+                  <div class="product-lists ps-3">
+                    <div class="row">
+                      <div class="col-sm-auto">
+                          <div>
+                              <a href="#" class="btn btn-primary d-flex align-items-center" id="filterToggle"><i class="bx bx-filter-alt align-bottom me-1"></i> Filter</a>
                           </div>
-                        </div>
                       </div>
-                      <div class="swiper-wrapper container m-0 p-0">
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Jons Sena</p>
-                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
+                      <div class="col-sm-auto">
+                          <div>
+                              <a href="#" class="btn btn-success d-flex align-items-center" id="addproduct-btn"><i class="bx bx-plus align-bottom me-1"></i> Add Product</a>
                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Kevin Hunt</p>
-                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Isabbelle</p>
-                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Don Mark</p>
-                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Jons Sena</p>
-                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Kevin Hunt</p>
-                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Isabbelle</p>
-                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Don Mark</p>
-                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
                       </div>
-                      <div class="col-12 text-center pt-2">
-                        <div class="swiper-pagination"></div>
+                      <div class="col-sm">
+                          <div class="d-flex justify-content-sm-end">
+                              <div class="search-box ms-2">
+                                  <input type="text" class="form-control" id="searchProductList" placeholder="Search Products...">
+                                  <i class="bx bx-search search-icon"></i>
+                              </div>
+                          </div>
                       </div>
-                    </div>
+                  </div>
                   </div>
                 </div>
             </div>
@@ -479,13 +589,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script>
       // Sidebar Toggle Start
-      $('#sidebarToggle').click( function(){
+      $("#sidebarToggle").click( function(){
         $("#sidebar").toggleClass("hide")
+      });
+      $("#filterToggle").click( function(){
+        $("#filtersbar").toggleClass("show")
       });
       // Sidebar Toggle Ends
     </script>

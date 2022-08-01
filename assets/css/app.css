@@ -9,6 +9,7 @@
     --primary-color:#ab53db;
     --primary-bgcolor:#eddff6;
     --sidebar-width:260px;
+    --filterbar-width: 220px;
 }
 * {
     margin: 0;
@@ -23,7 +24,11 @@ body{
 .wrapper .sidebar + .main {
     margin-left: var(--sidebar-width);
 }
-.wrapper .main{
+.product-wrapper .filtersbar.show + .product-lists {
+    margin-left: var(--filterbar-width);
+}
+.wrapper .main,
+.product-wrapper .product-lists{
     transition: all .3s ease-out;
 }
 .heading {
@@ -35,7 +40,11 @@ body{
 .wrapper .sidebar.hide{
     left: calc(-1 * var(--sidebar-width));
 }
-.wrapper .sidebar.hide + .main {
+.product-wrapper .filtersbar.show{
+    width: var(--filterbar-width);
+}
+.wrapper .sidebar.hide + .main,
+.product-wrapper .filtersbar + .product-lists {
     margin-left: 0;
 }
 .card{
@@ -90,6 +99,38 @@ body{
 .btna:hover:after {
     opacity: 1;
     right: -14px;
+}
+a:hover,
+.btn-link:hover{
+    color: var(--text-dark);
+}
+.form-check-input:focus,
+.form-control:focus,
+.btn-check:active+.btn:focus, 
+.btn-check:checked+.btn:focus, 
+.btn.active:focus, 
+.btn.show:focus, 
+.btn:active:focus,
+.btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
+}
+.search-box{
+    position: relative;
+}
+.search-box .form-control{
+    padding-left: 40px;
+}
+.search-box .search-icon{
+    position: absolute;
+    left: 13px;
+    top: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 /* Hamburger Icon Animation Start */
@@ -233,13 +274,13 @@ header .icon .count{
 }
 /* Header Style Ends */
 
-/* Charts Style Starts */
+/* Charts Style Start */
 .card.chart{
     height: 100%;
 }
 /* Charts Style Ends */
 
-/* Testimonial Slider Style Starts */
+/* Testimonial Slider Style Start */
 .testimonial-slider .cta-navigation .swiper-button-next,
 .testimonial-slider .cta-navigation .swiper-button-prev,
 .testimonial-slider .swiper-pagination{
@@ -259,3 +300,18 @@ header .icon .count{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 /* Testimonial Slider Style Ends */
+
+/* Filters Bar CSS Start */
+.filtersbar{
+    width: 0;
+    transition: all .3s ease-out;
+    position: absolute;
+}
+.filtersbar .tags .tag{
+    display: inline-block;
+}
+.filtersbar .card{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+/* Filters Bar CSS Ends */

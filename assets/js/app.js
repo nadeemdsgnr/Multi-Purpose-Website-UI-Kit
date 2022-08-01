@@ -242,9 +242,3 @@ const swiper = new Swiper('.mySwiper', {
 
 });
 // Testimonial Slider End
-
-// Sidebar Toggle
-$('#sidebarToggle').click( function(){
-  $("#sidebar").toggleClass("hide")
-});
-// Sidebar Toggle End
