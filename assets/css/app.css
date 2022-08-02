@@ -10,12 +10,17 @@
     --primary-bgcolor:#eddff6;
     --sidebar-width:260px;
     --filterbar-width: 220px;
+    --border-color:#e9ebec;
+    --heading-color:#495056;
 }
 * {
     margin: 0;
 }
 body{
     background-color: var(--body-bg-color);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    color:var(--heading-color);
 }
 .wrapper{
     padding: 20px;
@@ -41,7 +46,7 @@ body{
     left: calc(-1 * var(--sidebar-width));
 }
 .product-wrapper .filtersbar.show{
-    width: var(--filterbar-width);
+    width: calc(-20px + var(--filterbar-width));
 }
 .wrapper .sidebar.hide + .main,
 .product-wrapper .filtersbar + .product-lists {
@@ -54,8 +59,18 @@ body{
 .text-dull{
     color: var(--text-light);
 }
-.dropdown-item.active i, .dropdown-item:active i{
+.bgprimary{
+    background-color: var(--primary-bgcolor);
+    color: var(--primary-color);
+}
+.bgprimary:hover,
+.bgprimary:focus,
+.bgprimary:active{
+    background-color: var(--primary-color);
     color: var(--text-white);
+}
+.dropdown-item.active i, .dropdown-item:active i{
+    color: var(--text-white) !important;
 }
 .dropdown .dropdown-menu {
     -webkit-transition: all 0.32s;
@@ -111,7 +126,10 @@ a:hover,
 .btn.active:focus, 
 .btn.show:focus, 
 .btn:active:focus,
-.btn-check:focus+.btn, .btn:focus{
+.btn-check:focus+.btn, .btn:focus,
+.gridjs-pagination .gridjs-pages button:focus,
+.btn-clode:focus,
+button:focus:not(:focus-visible){
     box-shadow: none;
 }
 .search-box{
@@ -132,6 +150,27 @@ a:hover,
     -ms-flex-align: center;
     align-items: center;
 }
+.avatar-sm{
+    height: 3rem;
+    width: 3rem;
+}
+/* Fixed minimum width Start */
+.w-xs {
+    min-width: 80px;
+}
+.w-sm {
+    min-width: 95px;
+}
+.w-md {
+    min-width: 110px;
+}
+.w-lg {
+    min-width: 140px;
+}
+.w-xl {
+    min-width: 160px;
+}
+/* Fixed minimum width Ends */
 
 /* Hamburger Icon Animation Start */
 .ham {
@@ -197,7 +236,7 @@ a:hover,
 }
 .sidebar .nav-pills .nav-link:hover,
 .sidebar .nav-pills .nav-link:hover i{
-    color: var(--primary-color);
+    color: var(--primary-color) ;
 }
 .sidebar .nav-pills .nav-link.active,
 .sidebar .nav-pills .nav-link.active i, 
@@ -315,3 +354,106 @@ header .icon .count{
     overflow-y: auto;
 }
 /* Filters Bar CSS Ends */
+
+/* Product Tab CSS Start */
+.product-lists .nav-tabs-custom .nav-item .nav-link{
+    position: relative;
+}
+.product-lists .nav-tabs-custom .nav-item .nav-link::after{
+    content: "";
+    background: var(--bs-primary);
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all 250ms ease 0s;
+    transition: all 250ms ease 0s;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+.product-lists .nav-tabs-custom .nav-item .nav-link.active:after{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.table-card .gridjs-container{
+    color: var(--text-dark);
+    padding: 0;
+    display: block;
+}
+.table-card .gridjs-wrapper{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* border: 1px solid var(--text-light); */
+    border-radius: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-width: 1px 0;
+}
+.table-card td.gridjs-td,
+.table-card th.gridjs-th{
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 0.6rem;
+}
+.table-card th.gridjs-th{
+    border-top: 0;
+    color: var(--text-dark);
+    background-color: var(--bs-light);
+}
+.table-card th.gridjs-th .gridjs-th-content{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+}
+.table-card button.gridjs-sort{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 20px;
+}
+.table-card .gridjs-tbody,
+.table-card td.gridjs-td{
+    background-color: transparent;
+}
+.table-card.gridjs-border-none td.gridjs-td, 
+.table-card.gridjs-border-none th.gridjs-th{
+    border-right-width: 0;
+    border-left-width: 0;
+}
+.table-card td:first-child, .table-card th:first-child{
+    padding-left: 20px;
+}
+.table-card .gridjs-footer{
+    padding: 8px 16px;
+}
+.table-card .gridjs-footer .gridjs-summary{
+    color: #878a99;
+    margin-top: 8px!important;
+    font-size: 14px;
+    font-weight: 300;
+}
+.gridjs-pagination .gridjs-pages button{
+    margin-left: 0.3rem;
+    border-radius: 0.25rem!important;
+    border: 1px solid var(--border-color);
+    background-color: var(--text-white);
+    color: #405189;
+    font-size: 14px;
+}
+.gridjs-pagination .gridjs-pages button.gridjs-currentPage{
+    background-color: #405189;
+    color: #fff;
+    border-color: #405189;
+    font-weight: 500;
+}
+.gridjs-pagination .gridjs-pages button:disabled, 
+.gridjs-pagination .gridjs-pages button:hover:disabled, 
+.gridjs-pagination .gridjs-pages button[disabled]{
+    color: #878a99;
+    background-color: var(--text-white);
+    cursor: not-allowed;
+}
+/* Product Tab CSS Ends */

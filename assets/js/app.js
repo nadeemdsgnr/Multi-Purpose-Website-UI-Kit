@@ -7,7 +7,6 @@
 // Notification Close Button 
 var closebtns = document.getElementsByClassName("closeNotification");
 var i;
-
 for (i = 0; i < closebtns.length; i++) {
   closebtns[i].addEventListener("click", function() {
     this.parentElement.style.display = 'none';
@@ -58,7 +57,6 @@ var options = {
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   }
   };
-
   var chart = new ApexCharts(document.querySelector("#memorychart"), options);
   chart.render();
 // Line Chart Ends
@@ -94,7 +92,6 @@ var options = {
     }
   }]
   };
-
   var chart = new ApexCharts(document.querySelector("#visitorchart"), options);
   chart.render();
 // Pie Chart Ends
@@ -149,7 +146,6 @@ var options = {
     }
   }]
   };
-
   var chart = new ApexCharts(document.querySelector("#serverchart"), options);
   chart.render();
 // Sample Chart Ends
@@ -198,14 +194,11 @@ var options = {
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   }
 };
-
 var chart = new ApexCharts(document.querySelector("#samplechart"), options);
 chart.render();
-  
 // Server Request Chart Ends
 
 // Testimonial Slider Start
-
 const swiper = new Swiper('.mySwiper', {
   // slidesPerView: "4",
   spaceBetween: 30,
@@ -241,4 +234,8 @@ const swiper = new Swiper('.mySwiper', {
   }
 
 });
-// Testimonial Slider End
+// Testimonial Slider Ends
+
+// AOS Animation Intialization Start
+AOS.init();
+// AOS Animation Intialization Ends
