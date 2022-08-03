@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 :root{
     --bs-body-font-family:'Poppins', sans-serif;
     --body-font-family:'Poppins', sans-serif;
@@ -53,8 +53,8 @@ body{
     margin-left: 0;
 }
 .card{
-    border-radius: 30px;
     border: 0;
+    box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
 }
 .text-dull{
     color: var(--text-light);
@@ -150,10 +150,53 @@ button:focus:not(:focus-visible){
     -ms-flex-align: center;
     align-items: center;
 }
+.avatar-xs{
+    height: 2rem;
+    width: 2rem;
+}
 .avatar-sm{
     height: 3rem;
     width: 3rem;
 }
+.avatar-md{
+    height: 4.5rem;
+    width: 4.5rem;
+}
+.avatar-lg{
+    height: 6rem;
+    width: 6rem;
+}
+.avatar-title{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #405189;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 500;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+}
+.dropzone{
+    border: 2px dashed #e9ebec;
+}
+/* Forms Style Start */
+.form-label,
+.form-control,
+label{
+    font-size: 14px;
+    font-weight: 500;
+}
+.form-control{
+    font-weight: 400;
+}
+/* Forms Style Ends */
+
 /* Fixed minimum width Start */
 .w-xs {
     min-width: 80px;
@@ -221,6 +264,9 @@ button:focus:not(:focus-visible){
     position: fixed;
     transition: all .3s ease-out;
     left: 20px;
+}
+.sidebar .card{
+    border-radius: 30px;
 }
 .sidebar .nav-wrapper{
     max-height: 55vh;
@@ -426,6 +472,9 @@ header .icon .count{
 .table-card td:first-child, .table-card th:first-child{
     padding-left: 20px;
 }
+.table-card td:last-child, .table-card th:last-child{
+    text-align: center;
+}
 .table-card .gridjs-footer{
     padding: 8px 16px;
 }
@@ -457,3 +506,51 @@ header .icon .count{
     cursor: not-allowed;
 }
 /* Product Tab CSS Ends */
+
+/* Add Product CSS Start */
+.ckeditor-classic *{
+    font-family: var(--body-font-family);
+}
+.ckeditor-classic p,
+.ckeditor-classic li,
+.ckeditor-classic a{
+    font-size: 14px;
+}
+.ckeditor-classic .ck-editor__top .ck-toolbar{
+    border-top-left-radius: .375rem !important;
+    border-top-right-radius:  .375rem !important;;
+}
+.ckeditor-classic .ck-editor__main .ck-content{
+    border-bottom-left-radius:  .375rem !important;
+    border-bottom-right-radius:  .375rem !important;
+}
+.add-product .nav-tabs-custom.card-header-tabs .nav-link{
+    padding: 0 1rem 1rem;
+}
+.add-product .nav-tabs-custom .nav-item .nav-link{
+    position: relative;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+.add-product .nav-tabs-custom .nav-item .nav-link.active{
+    color: #405189;
+}
+.add-product .nav-tabs-custom .nav-item .nav-link::after{
+    content: "";
+    background-color: var(--bs-primary);
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all 250ms ease 0s;
+    transition: all 250ms ease 0s;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+.add-product .nav-tabs-custom .nav-item .nav-link.active:after{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/* Add Product CSS Ends */

@@ -212,7 +212,7 @@ var productListAll = new gridjs.Grid({
         }, 
         {
             name: "Stock",
-            width: "94px"
+            width: "101px"
         }, 
         {
             name: "Price",
@@ -223,7 +223,7 @@ var productListAll = new gridjs.Grid({
         }, 
         {
             name: "Orders",
-            width: "94px"
+            width: "101px"
         }, 
         {
             name: "Rating",
@@ -241,7 +241,7 @@ var productListAll = new gridjs.Grid({
         }, 
         {
             name: "Action",
-            width: "80px",
+            width: "101px",
             sort: {
                 enabled: !1
             },
@@ -253,6 +253,11 @@ var productListAll = new gridjs.Grid({
     className: {
         th: "text-muted fs-xs",
         td: "fs-s fw-light text-dark"
+    },
+    style: { 
+      table: { 
+        'white-space': 'nowrap'
+      }
     },
     pagination: {
         limit: 10
@@ -363,7 +368,7 @@ productListPublished = new gridjs.Grid({
         }, 
         {
             name: "Stock",
-            width: "94px"
+            width: "101px"
         }, 
         {
             name: "Price",
@@ -374,7 +379,7 @@ productListPublished = new gridjs.Grid({
         }, 
         {
             name: "Orders",
-            width: "94px"
+            width: "101px"
         }, 
         {
             name: "Rating",
@@ -392,7 +397,7 @@ productListPublished = new gridjs.Grid({
         }, 
         {
             name: "Action",
-            width: "80px",
+            width: "101px",
             sort: {
                 enabled: !1
             },
@@ -403,6 +408,11 @@ productListPublished = new gridjs.Grid({
     className: {
         th: "text-muted fs-xs",
         td: "fs-s fw-light text-dark"
+    },
+    style: { 
+      table: { 
+        'white-space': 'nowrap'
+      }
     },
     pagination: {
         limit: 10
