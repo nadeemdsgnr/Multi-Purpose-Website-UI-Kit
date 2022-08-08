@@ -195,7 +195,7 @@ var productListAll = new gridjs.Grid({
     columns: [
         {
             name: "#",
-            width: "20px",
+            width: "40px",
             sort: {
                 enabled: !1
             },
@@ -207,7 +207,7 @@ var productListAll = new gridjs.Grid({
             name: "Product",
             width: "380px",
             data: function(e) {
-                return gridjs.html('<div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="' + e.product.img + '" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-s mb-1 fw-normal"><a href="#" class="text-dark text-decoration-none">' + e.product.title + '</a></h5><p class="text-muted mb-0">Category : <span class="fw-normal">' + e.product.category + "</span></p></div></div>")
+                return gridjs.html('<div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="' + e.product.img + '" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-s mb-1 fw-normal"><a href="product-details.html" class="text-dark text-decoration-none">' + e.product.title + '</a></h5><p class="text-muted mb-0">Category : <span class="fw-normal">' + e.product.category + "</span></p></div></div>")
             }
         }, 
         {
@@ -251,6 +251,7 @@ var productListAll = new gridjs.Grid({
             }
     }],
     className: {
+        table: "w-100",
         th: "text-muted fs-xs",
         td: "fs-s fw-light text-dark"
     },
@@ -351,7 +352,7 @@ productListPublished = new gridjs.Grid({
     columns: [
         {
             name: "#",
-            width: "20px",
+            width: "40px",
             sort: {
                 enabled: !1
             },
@@ -363,7 +364,7 @@ productListPublished = new gridjs.Grid({
             name: "Product",
             width: "380px",
             data: function(e) {
-                return gridjs.html('<div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="' + e.product.img + '" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-s mb-1 fw-normal"><a href="#" class="text-dark text-decoration-none">' + e.product.title + '</a></h5><p class="text-muted mb-0">Category : <span class="fw-normal">' + e.product.category + "</span></p></div></div>")
+                return gridjs.html('<div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="' + e.product.img + '" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-s mb-1 fw-normal"><a href="product-details.html" class="text-dark text-decoration-none">' + e.product.title + '</a></h5><p class="text-muted mb-0">Category : <span class="fw-normal">' + e.product.category + "</span></p></div></div>")
             }
         }, 
         {
@@ -406,6 +407,7 @@ productListPublished = new gridjs.Grid({
             }
     }],
     className: {
+        table: "w-100",
         th: "text-muted fs-xs",
         td: "fs-s fw-light text-dark"
     },

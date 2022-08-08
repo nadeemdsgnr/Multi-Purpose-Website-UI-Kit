@@ -9,7 +9,7 @@
     --primary-color:#ab53db;
     --primary-bgcolor:#eddff6;
     --sidebar-width:260px;
-    --filterbar-width: 220px;
+    --filterbar-width: 240px;
     --border-color:#e9ebec;
     --heading-color:#495056;
 }
@@ -96,6 +96,12 @@ body{
 .fs-xs{
     font-size: 12px;
 }
+.list-icon{
+    font-size: 8px;
+}
+.fw-medium{
+    font-weight: 500;
+}
 .btna{
     display: inline-block;
     position: relative;
@@ -129,7 +135,8 @@ a:hover,
 .btn-check:focus+.btn, .btn:focus,
 .gridjs-pagination .gridjs-pages button:focus,
 .btn-clode:focus,
-button:focus:not(:focus-visible){
+button:focus:not(:focus-visible),
+.form-select:focus{
     box-shadow: none;
 }
 .search-box{
@@ -166,6 +173,15 @@ button:focus:not(:focus-visible){
     height: 6rem;
     width: 6rem;
 }
+.progress-sm {
+    height: 5px;
+}
+.progress-lg {
+    height: 12px;
+}
+.progress-xl {
+    height: 16px;
+}
 .avatar-title{
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -185,15 +201,27 @@ button:focus:not(:focus-visible){
 .dropzone{
     border: 2px dashed #e9ebec;
 }
-/* Forms Style Start */
-.form-label,
-.form-control,
-label{
-    font-size: 14px;
+.tags .tag{
+    display: inline-block;
+}
+.flatpickr-current-month{font-size: 120%;}
+.flatpickr-current-month input.cur-year,
+.flatpickr-current-month .flatpickr-monthDropdown-months{
     font-weight: 500;
 }
-.form-control{
+/* Forms Style Start */
+.form-control,
+.form-select{
+    font-size: 13px;
     font-weight: 400;
+}
+.form-label,
+label{
+    font-size: 13px;
+    font-weight: 500;
+}
+.border-dashed {
+    border-style: dashed!important;
 }
 /* Forms Style Ends */
 
@@ -297,6 +325,9 @@ label{
     font-size: 12px;
     color: var(--text-light);
     margin-bottom: 0.25rem;
+}
+.filter-check i.bx.bxs-star{
+    letter-spacing: -2.5px;
 }
 /* Sidebar Style Ends */
 
@@ -554,3 +585,70 @@ header .icon .count{
     transform: scale(1);
 }
 /* Add Product CSS Ends */
+/* Product Details CSS Start */
+.sticky-side-div{
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+.product-img-slider .swiper-button-next,
+.product-img-slider .swiper-button-prev{
+    height: 32px;
+    width: 32px;
+    background-color: rgba(64,81,137,.2);
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+}
+.product-img-slider .swiper-button-next::after,
+.product-img-slider .swiper-button-prev::after{
+    font-family: boxicons!important;
+    font-size: 28px;
+    color: var(--primary-color);
+    transition: all .3s ease;
+}
+.product-img-slider .swiper-button-prev::after{
+    content: "\ea4d"!important;
+}
+.product-img-slider .swiper-button-next::after{
+    content: "\ea50"!important;
+}
+.product-img-slider .product-nav-slider .nav-slide-item{
+    border: 1px solid #e9ebec;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.product-img-slider .product-nav-slider .swiper-slide-thumb-active .nav-slide-item{
+    background-color: #f3f6f9;
+}
+.product-content .nav-tabs-custom.card-header-tabs .nav-link{
+    padding: 0 1rem 1rem;
+}
+.product-content .nav-tabs-custom .nav-item .nav-link{
+    position: relative;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+    border: 0;
+}
+.product-content .nav-tabs-custom .nav-item .nav-link.active{
+    color: #405189;
+}
+.product-content .nav-tabs-custom .nav-item .nav-link::after{
+    content: "";
+    background-color: var(--bs-primary);
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all 250ms ease 0s;
+    transition: all 250ms ease 0s;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+.product-content .nav-tabs-custom .nav-item .nav-link.active:after{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/* Product Details Ends */
