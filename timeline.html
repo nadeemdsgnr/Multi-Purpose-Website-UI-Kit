@@ -1,14 +1,12 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Timeline</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link href="assets/css/app.css" rel="stylesheet">
   </head>
   <body>
@@ -22,7 +20,7 @@
             <div class="nav-wrapper" data-simplebar>
               <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                  <a href="index.html" class="nav-link active d-flex align-items-center" aria-current="page">
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
                   <i class='bx bx-home-alt me-2'></i>
                     Dashboard
                   </a>
@@ -123,8 +121,7 @@
                         </a>
                       </div>
                         <div class="col col-md-6 me-md-auto my-auto">
-                            <h1 class="heading mb-1">Dashboard</h1>
-                            <span class="sub-heading text-dull d-none">Welcome to Modern Admin Dashboard</span>
+                            <h1 class="heading mb-1">Timeline</h1>
                         </div>
                         <div class="col col-md-4 justify-content-end align-items-center d-flex">
                             <div class="icon fs-4 px-2 position-relative">
@@ -302,199 +299,172 @@
                         </div>
                     </div>
                 </header>
-                <div class="chart-cards">
-                  <div class="row py-3">
-                    <div class="col-lg-6 col-xl-4">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="memorychart" class="px-2 py-3 pe-3 overflow-hidden"></div>
-                      </div>
+                <div class="page-timeline mt-3 position-relative">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="timeline">
+                                <div class="timeline-item left">
+                                    <i class="bg-soft-success icon bx bx-user"></i>
+                                    <div class="date card-title">15 Dec 2021</div>
+                                    <div class="content">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="https://github.com/nadeemdsgnr.png" alt="" class="avatar-sm rounded">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5 class="fs-s">@Erica245 <small class="text-muted fs-xs fw-normal">- 10 min Ago</small></h5>
+                                                <p class="text-muted mb-2 fs-xs">Wish someone a sincere ‘good luck in your new job’ with these sweet messages. Make sure you pick out a good luck new job card to go with the words, and pop a beautiful bunch of flowers from our gift range in your basket, to make them feel super special.</p>
+                                                <div class="hstack gap-2 ">
+                                                    <a class="btn btn-sm btn-light fs-xs"><span class="me-1">&#128293;</span> 19</a>
+                                                    <a class="btn btn-sm btn-light fs-xs"><span class="me-1">&#129321;</span> 22</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item right">
+                                    <i class="bg-soft-success icon bx bx-diamond"></i>
+                                    <div class="date card-title">22 Oct 2021</div>
+                                    <div class="content">
+                                        <h5 class="card-title mb-2">Adding a new event with attachments</h5>
+                                        <p class="text-muted fs-xs">Too much or too little spacing, as in the example below, can make things unpleasant for the reader.</p>
+                                        <div class="row g-2">
+                                            <div class="col-sm-6">
+                                                <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                                    <div class="flex-shrink-0 avatar-xs">
+                                                        <div class="avatar-title bg-soft-danger text-danger fs-s rounded">
+                                                            <i class="bx bxs-camera"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+
+                                                    </div>
+                                                    <div class="flex-grow-1 overflow-hidden ms-2">
+                                                        <h6 class="text-truncate mb-0 fs-s"><a href="#" class="stretched-link text-dark text-decoration-none">Business Template - UI/UX design</a></h6>
+                                                        <small>685 KB</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-sm-6">
+                                                <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                                    <div class="flex-shrink-0 avatar-xs">
+                                                        <div class="avatar-title bg-soft-info text-info fs-s rounded">
+                                                            <i class="bx bxs-file-archive"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2 overflow-hidden">
+                                                        <h6 class="mb-0 text-truncate fs-s"><a href="#" class="stretched-link text-dark text-decoration-none">Bank Management System - PSD</a></h6>
+                                                        <small>8.78 MB</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+                                </div>
+                                <div class="timeline-item left">
+                                    <i class="bg-soft-success icon bx bxs-gift"></i>
+                                    <div class="date card-title">10 Jul 2021</div>
+                                    <div class="content">
+                                        <h5 class="card-title mb-2">Create new project buildng product</h5>
+                                        <p class="text-muted fs-xs">Every team project can have a velzon. Use the velzon to share information with your team to understand and contribute to your project.</p>
+                                        <div class="avatar-group mb-2">
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Christi">
+                                                <img src="https://github.com/sahilbabu.png" alt="" class="rounded-circle avatar-xs">
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Frank Hook">
+                                                <img src="https://github.com/nadeemdsgnr.png" alt="" class="rounded-circle avatar-xs">
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title=" Ruby">
+                                                <div class="avatar-xs">
+                                                    <div class="avatar-title rounded-circle bg-light text-primary">
+                                                        R
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="more">
+                                                <div class="avatar-xs">
+                                                    <div class="avatar-title rounded-circle">
+                                                        2+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item right">
+                                    <i class="bg-soft-success icon bx bx-check-shield"></i>
+                                    <div class="date card-title">18 May 2021</div>
+                                    <div class="content">
+                                        <h5 class="card-title mb-2">Donald Palmer <small class="text-muted fs-xs fw-normal">- Has changed 2 attributes</small></h5>
+                                        <p class="text-muted fst-italic mb-2 fs-xs">" This is an awesome admin dashboard template. It is extremely well structured and uses state of the art components (e.g. one of the only templates using boostrap 5.1.3 so far). I integrated it into a Rails 6 project. Needs manual integration work of course but the template structure made it easy. "</p>
+                                        <div class="hstack gap-2">
+                                            <a class="btn btn-sm btn-light fs-xs"><span class="me-1">&#128151;</span> 35</a>
+                                            <a class="btn btn-sm btn-light fs-xs"><span class="me-1">&#128077;</span> 10</a>
+                                            <a class="btn btn-sm btn-light fs-xs"><span class="me-1">&#128591;</span> 10</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item left">
+                                    <i class="bg-soft-success icon bx bx-smile"></i>
+                                    <div class="date card-title">10 Feb 2021</div>
+                                    <div class="content">
+                                        <h5 class="card-title mb-2">Velzon admin dashboard templates layout upload</h5>
+                                        <p class="text-muted fs-xs">Powerful, clean & modern responsive bootstrap 5 admin template. The maximum file size for uploads in this demo :</p>
+                                        <div class="row border border-dashed rounded gx-2 p-2">
+                                            <div class="col-3">
+                                                <img src="assets/images/small-img-2.jpg" alt="" class="img-fluid rounded">
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-3">
+                                                <img src="assets/images/small-img-3.jpg" alt="" class="img-fluid rounded">
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-3">
+                                                <img src="assets/images/small-img-4.jpg" alt="" class="img-fluid rounded">
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-3">
+                                                <img src="assets/images/small-img-6.jpg" alt="" class="img-fluid rounded">
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+                                </div>
+                                <div class="timeline-item right">
+                                    <i class="bg-soft-success icon bx bxs-hot"></i>
+                                    <div class="date card-title">01 Jan 2021</div>
+                                    <div class="content">
+                                        <h5 class="card-title mb-2">New ticket received <span class="badge bg-soft-success text-success fs-xs align-middle ms-1">Completed</span></h5>
+                                        <p class="text-muted mb-2 fs-xs">
+                                            It is important for us that we receive email notifications when a ticket is created as our IT staff are mobile and will not always be looking at the dashboard for new tickets.
+                                        </p>
+                                        <a href="#" class="link-primary text-decoration-underline fs-xs">Read More <i class="bx bx-arrow-back bx-rotate-180"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-xl-4 mt-4 mt-lg-0">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="visitorchart" class="py-3 overflow-hidden"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 mt-4 mt-xl-0">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="samplechart" class="px-2 py-3 pe-3 overflow-hidden"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-12 mt-4">
-                      <div class="card chart shadow-sm rounded-3">
-                        <div id="serverchart" class="px-2 py-3 pe-3 overflow-hidden"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="testimonial-slider">
-                  <div class="">
-                    <div class="swiper mySwiper">
-                      <div class="row">
-                        <div class="col-8">
-                          <h2 class="heading">User Review</h2>
-                          <p class="sub-heading text-dull">Lorem ipsum sit donor.</p>
-                        </div>
-                        <div class="col-4 align-items-center d-flex justify-content-end">
-                          <div class="cta-navigation d-flex align-items-center justify-content-between">
-                            <div class="swiper-button-prev me-5"></div>
-                            <div class="swiper-button-next"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-wrapper container m-0 p-0">
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Jons Sena</p>
-                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Kevin Hunt</p>
-                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Isabbelle</p>
-                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Don Mark</p>
-                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Jons Sena</p>
-                                <p class="date mb-0 text-dull fs-xs">2 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Kevin Hunt</p>
-                                <p class="date mb-0 text-dull fs-xs">4 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/sahilbabu.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Isabbelle</p>
-                                <p class="date mb-0 text-dull fs-xs">3 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="card testimonial p-4 mb-3 rounded-3">
-                            <div class="d-flex align-items-center">
-                              <img class="rounded shadow-sm" src="https://github.com/nadeemdsgnr.png" alt="user" width="40px" height="40px">
-                              <div class="ms-3">
-                                <p class="name mb-0">Don Mark</p>
-                                <p class="date mb-0 text-dull fs-xs">6 days ago</p>
-                              </div>
-                            </div>
-                            <p class="fs-s mb-0 py-2 text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut deserunt odit neque voluptas debitis incidunt iste possimus.</p>
-                            <div class="button">
-                              <a href="#" class="text-danger text-decoration-none me-3">Archive</a>
-                              <a href="#" class="text-success text-decoration-none btna">Accept</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 text-center pt-2">
-                        <div class="swiper-pagination"></div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/charts.js"></script>
     <script>
-      // Sidebar Toggle Start
-      $('#sidebarToggle').click( function(){
+    // Sidebar Toggle Start
+    $("#sidebarToggle").click( function(){
         $("#sidebar").toggleClass("hide")
-      });
-      // Sidebar Toggle Ends
+    });
+    // Sidebar Toggle Ends
     </script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 :root{
     --bs-body-font-family:'Poppins', sans-serif;
     --body-font-family:'Poppins', sans-serif;
-    --body-bg-color:#f3f2f7;
+    --body-bg-color:#f3f3f9;
     --text-light:#a0a0a0;
     --text-dark:#212529;
     --text-white:#fff;
@@ -55,6 +55,7 @@ body{
 .card{
     border: 0;
     box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
+    margin-bottom: 1.5rem!important;
 }
 .text-dull{
     color: var(--text-light);
@@ -68,6 +69,31 @@ body{
 .bgprimary:active{
     background-color: var(--primary-color);
     color: var(--text-white);
+}
+.bg-soft-primary{
+    color: #084298 !important;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+}
+.bg-soft-success{
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+.bg-soft-danger{
+    color: #842029 !important;
+    background-color: #f8d7da !important;
+    border-color: #f5c2c7 !important;
+}
+.bg-soft-warning{
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+.bg-soft-info{
+    color: #055160 !important;
+    background-color: #cff4fc !important;
+    border-color: #b6effb !important;
 }
 .dropdown-item.active i, .dropdown-item:active i{
     color: var(--text-white) !important;
@@ -90,7 +116,9 @@ body{
     opacity: 1;
     transform: translateY(0rem) scaleY(1);
 }
-.fs-s {
+.fs-s,
+.btn,
+button {
     font-size: 14px;
 }
 .fs-xs{
@@ -120,6 +148,11 @@ body{
 .btna:hover:after {
     opacity: 1;
     right: -14px;
+}
+.btn-link,
+a.btn-link{
+    font-size: 14px;
+    color: var(--text-light);
 }
 a:hover,
 .btn-link:hover{
@@ -173,6 +206,10 @@ button:focus:not(:focus-visible),
     height: 6rem;
     width: 6rem;
 }
+.avatar-xl{
+    height: 7.5rem;
+    width: 7.5rem;
+}
 .progress-sm {
     height: 5px;
 }
@@ -198,6 +235,29 @@ button:focus:not(:focus-visible),
     justify-content: center;
     width: 100%;
 }
+.avatar-group{
+    padding-left: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.avatar-group .avatar-group-item{
+    margin-left: -12px;
+    border: 2px solid var(--text-white);
+    border-radius: 50%;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: 12px;
+    text-decoration: none;
+}
+.avatar-group .avatar-group-item:hover{
+    position: relative;
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    z-index: 1;
+}
 .dropzone{
     border: 2px dashed #e9ebec;
 }
@@ -209,6 +269,41 @@ button:focus:not(:focus-visible),
 .flatpickr-current-month .flatpickr-monthDropdown-months{
     font-weight: 500;
 }
+.card-title{
+    font-size: 1rem!important;
+    color: var(--text-dark) !important;
+}
+/* General Tab Start */
+.nav-tabs-custom.card-header-tabs .nav-link{
+    padding: 0 1rem 1rem;
+}
+.nav-tabs-custom .nav-item .nav-link{
+    position: relative;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+.nav-tabs-custom .nav-item .nav-link.active{
+    color: #405189;
+}
+.nav-tabs-custom .nav-item .nav-link::after{
+    content: "";
+    background-color: var(--bs-primary);
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all 250ms ease 0s;
+    transition: all 250ms ease 0s;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+.nav-tabs-custom .nav-item .nav-link.active:after{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/* General Tab Ends */
 /* Forms Style Start */
 .form-control,
 .form-select{
@@ -652,3 +747,123 @@ header .icon .count{
     transform: scale(1);
 }
 /* Product Details Ends */
+/* User Profile CSS Start */
+.profile-user .profile-photo-edit{
+    position: absolute;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    cursor: pointer;
+}
+.profile-user .profile-img-file-input{
+    display: none;
+}
+/* User Profile CSS Ends */
+/* Timeline CSS Start */
+.timeline{
+    position: relative;
+    width: 100%;
+    /* max-width: 1400px; */
+    margin: 0 auto;
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--text-white);
+    top: 57px;
+    bottom: 166px;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.timeline-item{
+    padding: 30px 60px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+.timeline-item .icon{
+    position: absolute;
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    top: 30px;
+    right: -30px;
+    padding: 9px 0;
+    border-radius: 50px;
+    z-index: 1;
+}
+.timeline-item .date{
+    position: absolute;
+    display: inline-block;
+    width: calc(100% - 48px);
+    top: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+}
+.timeline-item .content{
+    padding: 20px;
+    background: var(--text-white);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
+}
+.timeline-item.left{
+    left: 0;
+}
+.timeline-item.left .date{
+    left: calc(100% + 48px);
+    text-align: start;
+}
+.timeline-item.right{
+    left: 50%;
+}
+.timeline-item.right .icon {
+    left: -30px;
+}
+.timeline-item.right .date {
+    right: calc(100% + 48px);
+    text-align: end;
+}
+.timeline-item.right::before {
+    left: 28px;
+    border-color:black;
+}
+@media (max-width: 991.98px) {
+    .timeline-item .date{
+        font-size: 12px !important;
+    }
+    .timeline::after {
+       left: 112px;
+       bottom: 180px;
+   }
+    .timeline-item {
+       width: 100%;
+       padding-left: 165px;
+       padding-right: 0px;
+   }
+    .timeline-item.right, .timeline-item.left {
+       left: 0%;
+   }
+    .timeline-item.right .icon, .timeline-item.left .icon {
+       width: 45px;
+       height: 45px;
+       top: 37.5px;
+       font-size: 18px;
+       left: 90px;
+   }
+    .timeline-item.right::before, .timeline-item.left::before {
+       left: 110px;
+       border-color: transparent transparent transparent "";
+   }
+    .timeline-item.right .date, .timeline-item.left .date {
+       right: auto;
+       left: 0px;
+       width: 79px;
+   }
+}
+/* Timeline CSS Ends */
