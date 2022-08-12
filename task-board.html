@@ -1,0 +1,1614 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Board</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/css/lib/dragula.min.css">
+    <link href="assets/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card shadow">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <img class="img-fluid px-4 py-2" src="assets/images/logo.png" alt="Logo">
+            </a>
+            <hr>
+            <div class="nav-wrapper" data-simplebar>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
+                  <i class='bx bx-home-alt me-2'></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="app-products.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Contacts
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dashboard me-2'></i>
+                    Pages
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dollar-circle me-2'></i>
+                    Crypto
+                  </a>
+                </li>
+                <li>
+                  <a href="task-board.html" class="nav-link d-flex align-items-center active">
+                      <i class='bx bx-task me-2'></i>
+                    Task Board
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-file-blank me-2'></i>
+                    Invoicing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-wallet-alt me-2'></i>
+                    Banking
+                  </a>
+                </li>
+                <li>
+                  <a href="file-manager.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-folder me-2'></i>
+                    File Manager
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-calendar-alt me-2'></i>
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-pencil me-2'></i>
+                    Todo List
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="copyrights">
+                <p class="fw-semibold text-black">Wisoft Modern Dashboard</p>
+                <p>© 2022 All Rights Reserved</p>
+                <p>Made with <i class='bx bxs-heart text-danger'></i> by Wisoft</p>
+            </div>
+          </div>
+        </div>
+        <div class="main col px-3">
+            <div class="container-fluid">
+                <header>
+                    <div class="row">
+                      <div class="col-auto my-auto pe-0">
+                        <a role="button" id="sidebarToggle">
+                          <svg class="ham" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 h -40" />
+                            <path
+                                  class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+                          </svg>
+                        </a>
+                      </div>
+                        <div class="col col-md-6 me-md-auto my-auto">
+                            <h1 class="heading mb-1">Task Board</h1>
+                        </div>
+                        <div class="col col-md-4 justify-content-end align-items-center d-flex">
+                            <div class="icon fs-4 px-2 position-relative">
+                                <a href="#" class="bx bx-message-square-dots align-middle link-dark text-decoration-none" id="dropdownMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="count">5</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownMessages" aria-labelledby="dropdownMessages" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <div class="d-flex align-items-center justify-content-center py-3">
+                                      <button class="btn bg-primary border-0 text-white fs-s">View All Messages</button>
+                                    </div>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="icon fs-4 px-2 me-2 dropdown">
+                                <a href="#" class="bx bx-bell align-middle link-dark text-decoration-none" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                  <span class="count bg-primary">11</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownNotifications" aria-labelledby="dropdownNotifications" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                              <a href="#" class="d-flex align-items-center text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false" onclick="showToast()">
+                                <img src="https://github.com/nadeemdsgnr.png" alt="" width="50" height="50" class="rounded me-2">
+                              </a>
+                              <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownUser" aria-labelledby="dropdownUser" data-popper-placement="bottom-end">
+                                <p class="text-dull px-3 mb-2">Welcome Nadeem</p>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="user-profile.html"><i class='me-1 bx bxs-user-circle text-dull'></i>Profile</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-message-detail text-dull'></i>Messages</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-help-circle text-dull'></i>Help</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bx-log-out-circle text-dull'></i>Sign out</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="task-board py-3 position-relative">
+                    <div class="row">
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Total Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="234">0</span>k</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-success mb-0"> <i class="bx bx-up-arrow-alt align-middle fw-bold"></i> 17.32 %</span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                    <i class="bx bx-grid-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div> <!-- end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Pending Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="64.5">0</span>k</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-danger mb-0"> <i class="bx bx-down-arrow-alt align-middle fw-bold"></i> 0.87 %</span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-warning text-warning rounded-circle fs-4">
+                                                    <i class="bx bx-file"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Completed Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="116.21">0</span>K</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-danger mb-0"> <i class="bx bx-down-arrow-alt align-middle fw-bold"></i> 2.52 % </span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-success text-success rounded-circle fs-4">
+                                                    <i class="bx bx-check-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Deleted Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="14.84">0</span>%</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-success mb-0"> <i class="bx bx-up-arrow-alt align-middle fw-bold"></i> 0.63 % </span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-danger text-danger rounded-circle fs-4">
+                                                    <i class="bx bx-trash"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row g-2">
+                                        <div class="col-lg-auto">
+                                            <div class="hstack gap-2">
+                                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createboardModal"><i class="bx bx-plus align-middle me-1"></i> Create Board</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-auto">
+                                            <div class="search-box">
+                                                <input type="text" class="form-control search" id="search-task-options" placeholder="Search for project, tasks...">
+                                                <i class="bx bx-search search-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-auto ms-sm-auto">
+                                            <div class="hstack gap-2">
+                                                <a href="task-list.html">
+                                                    <button class="btn bg-soft-primary"><i class="bx bx-menu align-middle me-1"></i> List View</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="avatar-group" id="newMembar">
+                                                <a href="#" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                    <img src="assets/images/users-avatar-5.jpg" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                <a href="#" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                <a href="#" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
+                                                    <img src="assets/images/users-avatar-10.jpg" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                <a href="#" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas">
+                                                    <img src="assets/images/users-avatar-8.jpg" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                <a href="#" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
+                                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                <a href="#addmemberModal" data-bs-toggle="modal" class="avatar-group-item">
+                                                    <div class="avatar-xs">
+                                                        <div class="avatar-title rounded-circle">
+                                                            +
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tasks-board mb-3" id="kanbanboard">
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">Unassigned <small class="badge bg-success align-middle ms-1 totaltask-badge fw-semibold">2</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="unassigned-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                         <h6 class="mb-0 flex-grow-1 text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Profile Page Structure</a></h6>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink1">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted fs-xs">Profile Page means a web page accessible to the public or to guests.</p>
+                                                    <div class="mb-3">
+                                                        <div class="d-flex mb-1">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="text-muted mb-0 fs-s"><span class="text-secondary">15%</span> of 100%</h6>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <span class="text-muted fs-s">03 Jan, 2022</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress rounded-3 progress-sm">
+                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Admin</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
+                                                                    <img src="assets/images/users-avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                                    <img src="assets/images/users-avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="text-muted mb-0 fs-s">#VL2436</h6>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 04</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 19</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 02</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                            </div>
+                                            <!--end card-->
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <div class="flex-grow-1">
+                                                       <h6 class="mb-0 text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Wisoft - Admin Layout Design</a></h6>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink12" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink12">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted fs-xs">The dashboard is the front page of the Administration UI.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Layout</span>
+                                                            <span class="badge bg-soft-primary">Admin</span>
+                                                            <span class="badge bg-soft-primary">Dashboard</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Michael">
+                                                                    <img src="assets/images/users-avatar-7.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
+                                                                    <img src="assets/images/users-avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
+                                                                    <img src="assets/images/users-avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 07 Jan, 2022</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 14</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 32</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 05</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                        <!--end tasks-->
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">To Do <small class="badge bg-secondary align-middle ms-1 totaltask-badge fw-semibold">2</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="todo-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="mb-0 text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Admin Layout Design</a></h6>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink3">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted fs-xs">Landing page template with clean, minimal and modern design.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Design</span>
+                                                            <span class="badge bg-soft-primary">Website</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
+                                                                    <img src="assets/images/users-avatar-10.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
+                                                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 07 Jan, 2022</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 13</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 52</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 17</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <div class="flex-grow-1">
+                                                        <h6 class="mb-0 text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Marketing & Sales</a></h6>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink4" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink4">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted fs-xs">Sales and marketing are two business functions within an organization.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Marketing</span>
+                                                            <span class="badge bg-soft-primary">Business</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Donald">
+                                                                    <img src="assets/images/users-avatar-9.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas">
+                                                                    <img src="assets/images/users-avatar-8.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 27 Dec, 2021</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 24</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 10</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 10</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">Inprogress <small class="badge bg-warning align-middle ms-1 totaltask-badge fw-semibold">2</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="inprogress-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL2457</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink5" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink5">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block link-dark text-decoration-none">Brand Logo Design</a></h6>
+                                                    <p class="text-muted fs-xs">BrandCrowd's brand logo maker allows you to generate and customize stand-out brand logos in minutes.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Logo</span>
+                                                            <span class="badge bg-soft-primary">Design</span>
+                                                            <span class="badge bg-soft-primary">UI/UX</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                                    <img src="assets/images/users-avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Michael">
+                                                                    <img src="assets/images/users-avatar-7.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
+                                                                    <img src="assets/images/users-avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 22 Dec, 2021</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 24</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 10</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 10</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL2743</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink6" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink6">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Change Old App Icon</a></h6>
+                                                    <p class="text-muted fs-xs">Change app icons on Android: How do you change the look of your apps.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Design</span>
+                                                            <span class="badge bg-soft-primary">Website</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
+                                                                    <img src="assets/images/users-avatar-10.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Donald">
+                                                                    <img src="assets/images/users-avatar-9.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                                    <img src="assets/images/users-avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 24 Oct, 2021</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 64</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 35</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 23</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">In Reviews <small class="badge bg-info align-middle ms-1 totaltask-badge fw-semibold">3</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="reviews-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL2453</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink7" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink7">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Create Product Animations</a></h6>
+                                                    <div class="tasks-img rounded" style="background-image: url('assets/images/small-img-2.jpg');"></div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Ecommerce</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
+                                                                    <img src="assets/images/users-avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 16 Nov, 2021</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 08</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 54</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 28</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL2340</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink8" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink8">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Product Features Analysis</a></h6>
+                                                    <p class="text-muted fs-xs">An essential part of strategic planning is running a product feature analysis.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Product</span>
+                                                            <span class="badge bg-soft-primary">Analysis</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                                    <img src="assets/images/users-avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
+                                                                    <img src="assets/images/users-avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 05 Jan, 2022</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 14</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 31</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 07</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL2462</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink9" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink9">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Create a Graph of Sketch</a></h6>
+                                                    <p class="text-muted fs-xs">To make a pie chart with equal slices create a perfect circle by selecting an Oval Tool.</p>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Sketch</span>
+                                                            <span class="badge bg-soft-primary mb-1">Marketing</span>
+                                                            <span class="badge bg-soft-primary">Design</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
+                                                                    <img src="assets/images/users-avatar-4.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas">
+                                                                    <img src="assets/images/users-avatar-8.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
+                                                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
+                                                                    <img src="assets/images/users-avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 05 Nov, 2021</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 12</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 74</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 37</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">Completed <small class="badge bg-success align-middle ms-1 totaltask-badge fw-semibold">1</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="completed-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <h6 class="mb-0 flex-grow-1 text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Create a Blog Template UI</a></h6>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink10" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink10">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted fs-xs">Landing page template with clean, minimal and modern design.</p>
+                                                    <div class="mb-3">
+                                                        <div class="d-flex mb-1">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="text-muted mb-0 fs-s"><span class="text-warning">35%</span> of 100%</h6>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <span class="text-muted fw-medium">3 Day</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress rounded-3 progress-sm">
+                                                            <div class="progress-bar bg-warning role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">Design</span>
+                                                            <span class="badge bg-soft-primary">Website</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
+                                                                    <img src="assets/images/users-avatar-8.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                                    <img src="assets/images/users-avatar-7.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
+                                                                    <img src="assets/images/users-avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="text-muted mb-0 fs-s">#VL2451</h6>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 24</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 10</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 10</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                                <div class="tasks-list">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-6 text-uppercase fw-semibold mb-0">new <small class="badge bg-success align-middle ms-1 totaltask-badge fw-semibold">1</small></h6>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <div class="dropdown card-header-dropdown">
+                                                <a class="text-reset dropdown-btn text-decoration-none" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fw-medium text-muted fs-s">Priority<i class="bx bx-chevron-down ms-1"></i></span>
+                                                </a>
+                                                <div class="dropdown-menu fs-s dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Priority</a>
+                                                    <a class="dropdown-item" href="#">Date Added</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                                        <div id="new-task" class="tasks">
+                                            <div class="card tasks-box">
+                                                <div class="card-body">
+                                                    <div class="d-flex mb-2">
+                                                        <a href="javascript:void(0)" class="text-muted fw-medium fs-s flex-grow-1 text-decoration-none">#VL5287</a>
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <ul class="dropdown-menu fs-s" aria-labelledby="dropdownMenuLink2">
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-info-circle align-middle me-2 text-muted"></i> View</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="bx bxs-pencil align-middle me-2 text-muted"></i> Edit</a></li>
+                                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="bx bx-trash align-middle me-2 text-muted"></i> Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-truncate task-title"><a href="task-board-details.html" class="d-block text-decoration-none link-dark">Banner Design for FB & Twitter</a></h6>
+                                                    <div class="tasks-img rounded" style="background-image: url('assets/images/small-img-4.jpg');"></div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge bg-soft-primary">UI/UX</span>
+                                                            <span class="badge bg-soft-primary">Graphic</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="avatar-group">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
+                                                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer fs-s border-top-dashed">
+                                                    <div class="d-flex">
+                                                        <div class="flex-grow-1">
+                                                            <span class="text-muted"><i class="bx bx-time"></i> 07 Jan, 2022</span>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <ul class="link-inline mb-0">
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-eye align-middle"></i> 11</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bx bx-chat align-middle"></i> 26</a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="javascript:void(0)" class="text-muted text-decoration-none"><i class="bi bi-paperclip align-middle"></i> 30</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end card-body-->
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <!--end card-->
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <button class="btn btn-task w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                    </div>
+                                </div>
+                                <!--end tasks-list-->
+                            </div>
+                            <!--end task-board-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--start add member modal-->
+    <div class="modal fade" id="addmemberModal" tabindex="-1" aria-labelledby="addmemberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border-0">
+                <div class="modal-header p-3 bg-soft-warning">
+                    <h5 class="modal-title fs-6" id="addmemberModalLabel">Add Member</h5>
+                    <button type="button" class="btn-close" id="btn-close-member" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-lg-12">
+                                <label for="submissionidInput" class="form-label">Submission ID</label>
+                                <input type="number" class="form-control" id="submissionidInput" placeholder="Submission ID">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="profileimgInput" class="form-label">Profile Images</label>
+                                <input class="form-control" type="file" id="profileimgInput">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="firstnameInput" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstnameInput" placeholder="Enter firstname">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="lastnameInput" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastnameInput" placeholder="Enter lastname">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="designationInput" class="form-label">Designation</label>
+                                <input type="text" class="form-control" id="designationInput" placeholder="Designation">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="titleInput" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="titleInput" placeholder="Title">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="numberInput" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="numberInput" placeholder="Phone number">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="joiningdateInput" class="form-label">Joining Date</label>
+                                <input type="text" class="form-control" id="joiningdateInput" placeholder="Select date">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="emailInput" class="form-label">Email ID</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-soft-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="addMember">Add Member</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end add member modal-->
+
+    <!--start add board modal-->
+    <div class="modal fade" id="createboardModal" tabindex="-1" aria-labelledby="createboardModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header p-3 bg-soft-info">
+                    <h5 class="modal-title fs-6" id="createboardModalLabel">Add Board</h5>
+                    <button type="button" class="btn-close" id="addBoardBtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label for="boardName" class="form-label">Board Name</label>
+                                <input type="text" class="form-control" id="boardName" placeholder="Enter board name">
+                            </div>
+                            <div class="mt-4">
+                                <div class="hstack gap-2 justify-content-end">
+                                    <button type="button" class="btn bg-soft-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success" id="addNewBoard">Add Board</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end add board modal-->
+
+    <!--start add board modal-->
+    <div class="modal fade" id="creatertaskModal" tabindex="-1" aria-labelledby="creatertaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
+                <div class="modal-header p-3 bg-soft-info">
+                    <h5 class="modal-title fs-6" id="creatertaskModalLabel">Create New Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row g-3">
+                            <div class="col-lg-12">
+                                <label for="projectName" class="form-label">Project Name</label>
+                                <input type="text" class="form-control" id="projectName" placeholder="Enter project name">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="sub-tasks" class="form-label">Task Title</label>
+                                <input type="text" class="form-control" id="sub-tasks" placeholder="Task title">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="task-description" class="form-label">Task Description</label>
+                                <textarea class="form-control" id="task-description" rows="3" placeholder="Task description"></textarea>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="formFile" class="form-label">Tasks Images</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="tasks-progress" class="form-label">Add Team Member</label>
+                                <div data-simplebar style="height: 95px;">
+                                    <ul class="list-unstyled vstack gap-2 mb-0">
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="anna-adame">
+                                                <label class="form-check-label d-flex align-items-center" for="anna-adame">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-1.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Anna Adame
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="frank-hook">
+                                                <label class="form-check-label d-flex align-items-center" for="frank-hook">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-3.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Frank Hook
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="alexis-clarke">
+                                                <label class="form-check-label d-flex align-items-center" for="alexis-clarke">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-6.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Alexis Clarke
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="herbert-stokes">
+                                                <label class="form-check-label d-flex align-items-center" for="herbert-stokes">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-2.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Herbert Stokes
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="michael-morris">
+                                                <label class="form-check-label d-flex align-items-center" for="michael-morris">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-7.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Michael Morris
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="nancy-martino">
+                                                <label class="form-check-label d-flex align-items-center" for="nancy-martino">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-5.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Nancy Martino
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="thomas-taylor">
+                                                <label class="form-check-label d-flex align-items-center" for="thomas-taylor">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-8.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Thomas Taylor
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" value="" id="tonya-noble">
+                                                <label class="form-check-label d-flex align-items-center" for="tonya-noble">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-10.jpg" alt="" class="avatar-xxs rounded-circle" />
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Tonya Noble
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-4">
+                                <label for="due-date" class="form-label">Due Date</label>
+                                <input type="text" class="form-control" id="due-date" data-provider="flatpickr" placeholder="Select date">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-4">
+                                <label for="categories" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="categories" placeholder="Enter tag">
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-4">
+                                <label for="tasks-progress" class="form-label">Tasks Progress</label>
+                                <input type="text" class="form-control" maxlength="3" id="tasks-progress" placeholder="Enter progress">
+                            </div>
+                            <!--end col-->
+                            <div class="mt-4">
+                                <div class="hstack gap-2 justify-content-end">
+                                    <button type="button" class="btn bg-soft-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success">Add Task</button>
+                                </div>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end add board modal-->
+
+    <!--start delete record modal -->
+    <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="delete-btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mt-2 text-center">
+                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                        <div class="mt-4 pt-2 mx-4 mx-sm-5">
+                            <h4>Are you sure ?</h4>
+                            <p class="text-muted mx-4 mb-0">Are you sure you want to remove this tasks ?</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                        <button type="button" class="btn w-sm bg-soft-success" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn w-sm btn-danger" id="delete-record">Yes, Delete It!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end delete record modal -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script type="text/javascript" src="assets/js/lord-icon-2.1.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="assets/js/lib/dragula.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/dom-autoscroller.min.js"></script>
+    <script type="text/javascript" src="assets/js/task-board.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script>
+    // Sidebar Toggle Start
+    $("#sidebarToggle").click( function(){
+        $("#sidebar").toggleClass("hide")
+    });
+    $("#filterToggle").click( function(){
+        $("#filtersbar").toggleClass("show")
+    });
+    // Sidebar Toggle Ends
+    // Datepicker Start
+    $("#joiningdateInput").flatpickr({
+        minDate: "today"
+    });
+    // Datepicker Ends
+    </script>
+  </body>
+</html>

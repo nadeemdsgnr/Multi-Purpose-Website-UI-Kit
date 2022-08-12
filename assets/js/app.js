@@ -72,7 +72,26 @@ productThubnailSlider = new Swiper(".product-thumbnail-slider", {
   }
 });
 // Products Slider Ends
+
 // AOS Animation Intialization Start
 AOS.init();
 // AOS Animation Intialization Ends
+
+// JS Loader Start
+function k() {
+  var e = document.querySelectorAll(".counter-value");
+
+  function s(e) {
+      return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  }
+  e && Array.from(e).forEach(function(o) {
+      ! function e() {
+          var t = +o.getAttribute("data-target"),
+              a = +o.innerText,
+              n = t / 250;
+          n < 1 && (n = 1), a < t ? (o.innerText = (a + n).toFixed(0), setTimeout(e, 1)) : o.innerText = s(t), s(o.innerText)
+      }()
+  })
+}
+// JS Loader Ends
 

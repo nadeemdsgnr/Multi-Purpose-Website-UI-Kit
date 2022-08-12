@@ -1,0 +1,789 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="assets/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card shadow">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <img class="img-fluid px-4 py-2" src="assets/images/logo.png" alt="Logo">
+            </a>
+            <hr>
+            <div class="nav-wrapper" data-simplebar>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
+                  <i class='bx bx-home-alt me-2'></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="app-products.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Contacts
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dashboard me-2'></i>
+                    Pages
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dollar-circle me-2'></i>
+                    Crypto
+                  </a>
+                </li>
+                <li>
+                  <a href="task-board.html" class="nav-link d-flex align-items-center active">
+                      <i class='bx bx-task me-2'></i>
+                    Task Board
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-file-blank me-2'></i>
+                    Invoicing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-wallet-alt me-2'></i>
+                    Banking
+                  </a>
+                </li>
+                <li>
+                  <a href="file-manager.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-folder me-2'></i>
+                    File Manager
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-calendar-alt me-2'></i>
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-pencil me-2'></i>
+                    Todo List
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="copyrights">
+                <p class="fw-semibold text-black">Wisoft Modern Dashboard</p>
+                <p>© 2022 All Rights Reserved</p>
+                <p>Made with <i class='bx bxs-heart text-danger'></i> by Wisoft</p>
+            </div>
+          </div>
+        </div>
+        <div class="main col px-3">
+            <div class="container-fluid">
+                <header>
+                    <div class="row">
+                      <div class="col-auto my-auto pe-0">
+                        <a role="button" id="sidebarToggle">
+                          <svg class="ham" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 h -40" />
+                            <path
+                                  class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+                          </svg>
+                        </a>
+                      </div>
+                        <div class="col col-md-6 me-md-auto my-auto">
+                            <h1 class="heading mb-1">Task List</h1>
+                        </div>
+                        <div class="col col-md-4 justify-content-end align-items-center d-flex">
+                            <div class="icon fs-4 px-2 position-relative">
+                                <a href="#" class="bx bx-message-square-dots align-middle link-dark text-decoration-none" id="dropdownMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="count">5</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownMessages" aria-labelledby="dropdownMessages" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <div class="d-flex align-items-center justify-content-center py-3">
+                                      <button class="btn bg-primary border-0 text-white fs-s">View All Messages</button>
+                                    </div>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="icon fs-4 px-2 me-2 dropdown">
+                                <a href="#" class="bx bx-bell align-middle link-dark text-decoration-none" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                  <span class="count bg-primary">11</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownNotifications" aria-labelledby="dropdownNotifications" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                              <a href="#" class="d-flex align-items-center text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false" onclick="showToast()">
+                                <img src="https://github.com/nadeemdsgnr.png" alt="" width="50" height="50" class="rounded me-2">
+                              </a>
+                              <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownUser" aria-labelledby="dropdownUser" data-popper-placement="bottom-end">
+                                <p class="text-dull px-3 mb-2">Welcome Nadeem</p>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="user-profile.html"><i class='me-1 bx bxs-user-circle text-dull'></i>Profile</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-message-detail text-dull'></i>Messages</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-help-circle text-dull'></i>Help</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bx-log-out-circle text-dull'></i>Sign out</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="task-list py-3 position-relative">
+                    <div class="row">
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Total Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="234">0</span>k</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-success mb-0"> <i class="bx bx-down-up-alt align-middle fw-bold"></i> 17.32 %</span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                    <i class="bx bx-grid-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div> <!-- end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Pending Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="64.5">0</span>k</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-danger mb-0"> <i class="bx bx-down-arrow-alt align-middle fw-bold"></i> 0.87 %</span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-warning text-warning rounded-circle fs-4">
+                                                    <i class="bx bx-file"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Completed Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="116.21">0</span>K</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-danger mb-0"> <i class="bx bx-down-arrow-alt align-middle fw-bold"></i> 2.52 % </span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-success text-success rounded-circle fs-4">
+                                                    <i class="bx bx-check-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="fw-medium text-muted mb-0 fs-6">Deleted Tasks</p>
+                                            <h2 class="mt-4 fw-medium"><span class="counter-value" data-target="14.84">0</span>%</h2>
+                                            <p class="mb-0 text-muted"><span class="badge bg-light fw-bold align-middle text-success mb-0"> <i class="bx bx-down-up-alt align-middle fw-bold"></i> 0.63 % </span> <span class="fs-s">vs. previous month</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-soft-danger text-danger rounded-circle fs-4">
+                                                    <i class="bx bx-trash"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card" id="tasksList">
+                                <div class="card-header border-0 bg-white">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="card-title mb-0 flex-grow-1">All Tasks</h5>
+                                        <div class="flex-shrink-0">
+                                            <a href="task-board.html" class="btn bg-soft-primary me-2" role="button"><i class="bx bx-grid align-middle me-1"></i>Grid View</a>
+                                            <button class="btn btn-primary add-btn me-2" data-bs-toggle="modal" data-bs-target="#showModal"><i class="bx bx-plus align-middle me-1"></i> Create Task</button>
+                                            <button class="btn bg-soft-danger fs-6 py-2"><i class="bx bx-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body border border-dashed border-end-0 border-start-0">
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-xxl-5 col-sm-12">
+                                                <div class="search-box">
+                                                    <input type="text" class="form-control search bg-light border-light" placeholder="Search for tasks or something...">
+                                                    <i class="bx bx-search search-icon"></i>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+
+                                            <div class="col-xxl-3 col-sm-4">
+                                                <input type="text" class="form-control bg-light border-light" id="demo-datepicker" placeholder="Select date range">
+                                            </div>
+                                            <!--end col-->
+
+                                            <div class="col-xxl-3 col-sm-4">
+                                                <div class="input-light">
+                                                    <select class="form-control bg-light border-light" name="single-default" id="idStatus">
+                                                        <option value="">Status</option>
+                                                        <option value="all" selected>All</option>
+                                                        <option value="New">New</option>
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Inprogress">Inprogress</option>
+                                                        <option value="Completed">Completed</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-xxl-1 col-sm-4">
+                                                <button type="button" class="btn btn-primary w-100"> <i class="bx bx-filter-alt me-1 align-middle"></i>
+                                                    Filters
+                                                </button>
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </form>
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-body d-none">
+                                    <div class="table-responsive table-card mb-4">
+                                        <table class="table align-middle table-nowrap mb-0" id="tasksTable">
+                                            <thead class="table-light text-muted">
+                                                <tr>
+                                                    <th scope="col" style="width: 40px;">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                        </div>
+                                                    </th>
+                                                    <th class="sort" data-sort="id">ID</th>
+                                                    <th class="sort" data-sort="project_name">Project</th>
+                                                    <th class="sort" data-sort="tasks_name">Task</th>
+                                                    <th class="sort" data-sort="client_name">Client Name</th>
+                                                    <th class="sort" data-sort="assignedto">Assigned To</th>
+                                                    <th class="sort" data-sort="due_date">Due Date</th>
+                                                    <th class="sort" data-sort="status">Status</th>
+                                                    <th class="sort" data-sort="priority">Priority</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list form-check-all">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                        </div>
+                                                    </th>
+                                                    <td class="id"><a href="#" class="fw-medium link-primary">#VLZ501</a></td>
+                                                    <td class="project_name"><a href="#" class="fw-medium link-primary">Wisoft - v1.0.0</a></td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div class="flex-grow-1 tasks_name">Profile Page Satructure</div>
+                                                            <div class="flex-shrink-0 ms-4">
+                                                                <ul class="list-inline tasks-list-menu mb-0">
+                                                                    <li class="list-inline-item"><a href="#"><i class="bx bx-link-external align-bottom me-2 text-muted"></i></a></li>
+                                                                    <li class="list-inline-item"><a class="edit-item-btn" href="#showModal" data-bs-toggle="modal"><i class="bx bxs-pencil align-bottom me-2 text-muted"></i></a></li>
+                                                                    <li class="list-inline-item">
+                                                                        <a class="remove-item-btn" data-bs-toggle="modal" href="#deleteOrder">
+                                                                            <i class="bx bxs-trash align-bottom me-2 text-muted"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="client_name">Robert McMahon</td>
+                                                    <td class="assignedto">
+                                                        <div class="avatar-group">
+                                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                                <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle avatar-xxs" />
+                                                            </a>
+                                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
+                                                                <img src="assets/images/users-avatar-1.jpg" alt="" class="rounded-circle avatar-xxs" />
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="due_date">25 Jan, 2022</td>
+                                                    <td class="status"><span class="badge bg-soft-primary text-uppercase">Inprogress</span></td>
+                                                    <td class="priority"><span class="badge bg-danger text-uppercase">High</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--end table-->
+                                        <div class="noresult" style="display: none">
+                                            <div class="text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
+                                                <h5 class="mt-2 fs-6">Sorry! No Result Found</h5>
+                                                <p class="text-muted mb-0 fs-s">We've searched more than 200k+ tasks We did not find any tasks for you search.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mt-2">
+                                        <div class="pagination-wrap hstack gap-2">
+                                            <a class="page-item pagination-prev disabled" href="#">
+                                                Previous
+                                            </a>
+                                            <ul class="pagination listjs-pagination mb-0"></ul>
+                                            <a class="page-item pagination-next" href="#">
+                                                Next
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="taskgrid" class="table-card gridjs-border-none"></div>  
+                                    <div class="noresult" style="display: none">
+                                        <div class="text-center">
+                                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
+                                            <h5 class="mt-2 fs-6">Sorry! No Result Found</h5>
+                                            <p class="text-muted mb-0 fs-s">We've searched more than 200k+ tasks We did not find any tasks for you search.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--start delete modal -->
+    <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-5 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                    <div class="mt-4 text-center">
+                        <h4>You are about to delete a task ?</h4>
+                        <p class="text-muted fs-14 mb-4">Deleting your task will remove all of
+                            your information from our database.</p>
+                        <div class="hstack gap-2 justify-content-center remove">
+                            <button class="btn btn-link bg-soft-success fw-medium text-decoration-none" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end delete modal -->
+
+    <!--start create task modal -->
+    <div class="modal fade zoomIn" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
+                <div class="modal-header p-3 bg-soft-success">
+                    <h5 class="modal-title fs-6" id="exampleModalLabel">Create Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <input type="hidden" id="tasksId" />
+                        <div class="row g-3">
+                            <div class="col-lg-12">
+                                <label for="projectName-field" class="form-label">Project Name</label>
+                                <input type="text" id="projectName-field" class="form-control" placeholder="Project name" required />
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <div>
+                                    <label for="tasksTitle-field" class="form-label">Title</label>
+                                    <input type="text" id="tasksTitle-field" class="form-control" placeholder="Title" required />
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="clientName-field" class="form-label">Client Name</label>
+                                <input type="text" id="clientName-field" class="form-control" placeholder="Client name" required />
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label class="form-label">Assigned To</label>
+                                <div data-simplebar style="height: 95px;">
+                                    <ul class="list-unstyled vstack gap-2 mb-0">
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-1.jpg" id="anna-adame">
+                                                <label class="form-check-label d-flex align-items-center" for="anna-adame">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-1.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Anna Adame
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-3.jpg" id="frank-hook">
+                                                <label class="form-check-label d-flex align-items-center" for="frank-hook">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-3.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Frank Hook
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-6.jpg" id="alexis-clarke">
+                                                <label class="form-check-label d-flex align-items-center" for="alexis-clarke">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-6.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Alexis Clarke
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-2.jpg" id="herbert-stokes">
+                                                <label class="form-check-label d-flex align-items-center" for="herbert-stokes">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-2.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Herbert Stokes
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-7.jpg" id="michael-morris">
+                                                <label class="form-check-label d-flex align-items-center" for="michael-morris">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-7.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Michael Morris
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-5.jpg" id="nancy-martino">
+                                                <label class="form-check-label d-flex align-items-center" for="nancy-martino">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-5.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Nancy Martino
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-8.jpg" id="thomas-taylor">
+                                                <label class="form-check-label d-flex align-items-center" for="thomas-taylor">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-8.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Thomas Taylor
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input me-3" type="checkbox" name="assignedTo[]" value="avatar-10.jpg" id="tonya-noble">
+                                                <label class="form-check-label d-flex align-items-center" for="tonya-noble">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="assets/images/users-avatar-10.jpg" alt="" class="avatar-xxs rounded-circle">
+                                                    </span>
+                                                    <span class="flex-grow-1 ms-2">
+                                                        Tonya Noble
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="duedate-field" class="form-label">Due Date</label>
+                                <input type="text" id="duedate-field" class="form-control" placeholder="Due date" required />
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-6">
+                                <label for="ticket-status" class="form-label">Status</label>
+                                <select class="form-control" id="ticket-status">
+                                    <option value="">Status</option>
+                                    <option value="New">New</option>
+                                    <option value="Inprogress">Inprogress</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <label for="priority-field" class="form-label">Priority</label>
+                                <select class="form-control" id="priority-field">
+                                    <option value="">Priority</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="hstack gap-2 justify-content-end">
+                            <button type="button" class="btn btn-light bg-soft-danger" id="close-modal" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" id="add-btn">Add Task</button>
+                            <button type="button" class="btn btn-success" id="edit-btn">Update Task</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end create task modal -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script type="text/javascript" src="assets/js/lord-icon-2.1.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/tasklist.js"></script>
+    <script>
+    // Sidebar Toggle Start
+    $("#sidebarToggle").click( function(){
+        $("#sidebar").toggleClass("hide")
+    });
+    $("#filterToggle").click( function(){
+        $("#filtersbar").toggleClass("show")
+    });
+    // Sidebar Toggle Ends
+    // JS Loader Start
+    k();
+    // JS Loader Ends
+    // Datepicker Start
+    $("#demo-datepicker").flatpickr({
+      minDate: "today",
+      dateformat: "d M, Y",
+      mode: "range"
+    });
+    $("#duedate-field").flatpickr({
+        minDate: "today"
+    });
+    // Datepicker Ends
+    </script>
+  </body>
+</html>
