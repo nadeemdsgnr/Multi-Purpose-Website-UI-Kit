@@ -2,11 +2,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>File Manager</title>
+    <title>Customers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body>
@@ -38,7 +40,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="customers.html" class="nav-link d-flex align-items-center">
+                  <a href="customers.html" class="nav-link d-flex align-items-center active">
                       <i class='bx bxs-user me-2'></i>
                     Customers
                   </a>
@@ -86,7 +88,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="file-manager.html" class="nav-link d-flex align-items-center active">
+                  <a href="file-manager.html" class="nav-link d-flex align-items-center">
                       <i class='bx bxs-folder me-2'></i>
                     File Manager
                   </a>
@@ -133,7 +135,7 @@
                         </a>
                       </div>
                         <div class="col col-md-6 me-md-auto my-auto">
-                            <h1 class="heading mb-1">File Manager</h1>
+                            <h1 class="heading mb-1">Customers</h1>
                         </div>
                         <div class="col col-md-4 justify-content-end align-items-center d-flex">
                             <div class="icon fs-4 px-2 position-relative">
@@ -311,7 +313,196 @@
                         </div>
                     </div>
                 </header>
-                <div class="page-file-manager mt-3 position-relative">
+                <div class="customers mt-3 position-relative">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card" id="orderList">
+                                <div class="card-header border-0 bg-white p-3">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="card-title mb-0 flex-grow-1">Customers</h5>
+                                        <div class="flex-shrink-0">
+                                            <button class="btn bg-soft-danger fs-6 py-2"><i class="bx bx-trash"></i></button>
+                                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="bx bx-plus align-middle me-1"></i>Add Customer</button>
+                                            <button type="button" class="btn btn-primary text-white"><i class="bx bx-download align-middle me-1"></i> Import</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body border border-dashed border-end-0 border-start-0">
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-xl-6">
+                                                <div class="search-box">
+                                                    <input type="text" class="form-control search" placeholder="Search for customer, email, phone, status or something...">
+                                                    <i class="bx bx-search search-icon"></i>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-xl-6">
+                                                <div class="row g-3">
+                                                    <div class="col-sm-4">
+                                                        <div class="">
+                                                            <input type="text" class="form-control" id="datepicker-range" placeholder="Select date">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-sm-4">
+                                                        <div>
+                                                            <select class="form-control" name="single-default" id="idStatus">
+                                                                <option value="">Status</option>
+                                                                <option value="all" selected>All</option>
+                                                                <option value="Active">Active</option>
+                                                                <option value="Block">Block</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+
+                                                    <div class="col-sm-4">
+                                                        <div>
+                                                            <button type="button" class="btn btn-primary w-100"> <i class="bx bx-filter-alt me-2 align-middle"></i>Filters</button>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end row-->
+                                    </form>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <div class="table-responsive table-card mb-1 m-n3">
+                                            <table class="table table-nowrap align-middle fs-s" id="customerTable">
+                                                <thead class="text-muted table-light">
+                                                    <tr class="text-uppercase align-middle">    
+                                                        <th scope="col" style="width: 25px;padding-bottom: 0px;">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                            </div>
+                                                        </th>
+                                                        <th class="fs-xs">Customer</th>
+                                                        <th class="fs-xs">Email</th>
+                                                        <th class="fs-xs">Phone</th>
+                                                        <th class="fs-xs">Joining Date</th>
+                                                        <th class="fs-xs">Status</th>
+                                                        <th class="fs-xs">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list form-check-all">
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="customer_name">Mary Cousar</td>
+                                                        <td class="email">marycousar@velzon.com</td>
+                                                        <td class="phone">580-464-4694</td>
+                                                        <td class="date">06 Apr, 2021</td>
+                                                        <td class="status"><span class="badge bg-soft-success text-uppercase">Active</span>
+                                                        </td>
+                                                        <td>
+                                                            <ul class="list-inline hstack mb-0">
+                                                                <li class="list-inline-item edit" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Edit">
+                                                                    <a href="#showModal" data-bs-toggle="modal" class="text-primary d-inline-block edit-item-btn">
+                                                                        <i class="bx bxs-pencil fs-6"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                                    <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="#deleteCustomer">
+                                                                        <i class="bx bx-trash fs-6"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="noresult" style="display: none">
+                                                <div class="text-center">
+                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c" style="width:75px;height:75px"></lord-icon>
+                                                    <h6 class="mt-2">Sorry! No Result Found</h6>
+                                                    <p class="text-muted">We've searched more than 150+ Customers We did not find any customer for you search.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-light p-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+                                                </div>
+                                                <form action="#">
+                                                    <div class="modal-body">
+
+                                                        <div class="mb-3">
+                                                            <label for="customername-field" class="form-label">Customer Name</label>
+                                                            <input type="text" id="customername-field" class="form-control" placeholder="Enter name" required />
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="email-field" class="form-label">Email</label>
+                                                            <input type="email" id="email-field" class="form-control" placeholder="Enter email" required />
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="phone-field" class="form-label">Phone</label>
+                                                            <input type="text" id="phone-field" class="form-control" placeholder="Enter phone no." required />
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="date-field" class="form-label">Joining Date</label>
+                                                            <input type="date" id="date-field" class="form-control" required placeholder="Select date" />
+                                                        </div>
+
+                                                        <div>
+                                                            <label for="status-field" class="form-label">Status</label>
+                                                            <select class="form-control" name="status-field" id="status-field">
+                                                                <option value="">Status</option>
+                                                                <option value="active">Active</option>
+                                                                <option value="block">Block</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="hstack gap-2 justify-content-end">
+                                                            <button type="button" class="btn bg-soft-danger" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success" id="add-btn">Add Customer</button>
+                                                            <button type="button" class="btn btn-success d-none" id="edit-btn">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade flip" id="deleteCustomer" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body p-5 text-center">
+                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                                    <div class="mt-4 text-center">
+                                                        <h4 class="fs-6">Are you sure ?</h4>
+                                                        <p class="text-muted fs-s mb-4">Are you sure you want to remove this record ?</p>
+                                                        <div class="hstack gap-2 justify-content-center remove">
+                                                            <button class="btn bg-soft-success link-success fw-medium text-decoration-none" data-bs-dismiss="modal"><i class="bx bx-x me-1 align-middle"></i> Close</button>
+                                                            <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal -->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--end col-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -321,7 +512,10 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="assets/js/lord-icon-2.1.0.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script>
     // Sidebar Toggle Start
@@ -329,6 +523,10 @@
         $("#sidebar").toggleClass("hide")
     });
     // Sidebar Toggle Ends
+    // Datepicker Start
+    $("#datepicker-range").flatpickr();
+    $("#date-field").flatpickr();
+    // Datepicker Ends
     </script>
   </body>
 </html>

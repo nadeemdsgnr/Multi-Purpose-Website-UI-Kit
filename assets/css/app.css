@@ -57,6 +57,9 @@ body{
     box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
     margin-bottom: 1.5rem!important;
 }
+.card-height-100{
+    height: calc(100% - 1.5rem);
+}
 .card-animate{
     -webkit-transition: all .4s;
     transition: all .4s;
@@ -84,6 +87,9 @@ body{
     color: #084298 !important;
     background-color: #cfe2ff !important;
     border-color: #b6d4fe !important;
+}
+.bg-soft-secondary{
+    background-color: rgba(53,119,241,.18)!important;
 }
 .bg-soft-success{
     color: #0f5132 !important;
@@ -179,8 +185,15 @@ a:hover,
 .gridjs-pagination .gridjs-pages button:focus,
 .btn-clode:focus,
 button:focus:not(:focus-visible),
-.form-select:focus{
+.form-select:focus,
+.page-link:focus{
     box-shadow: none;
+}
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:focus-within,
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    border-color: #fff;
 }
 .search-box{
     position: relative;
@@ -287,6 +300,36 @@ button:focus:not(:focus-visible),
     font-size: 1rem!important;
     color: var(--text-dark) !important;
 }
+.modal-title{
+    font-size: 1rem!important;
+}
+.pagination-count{
+    color: #878a99!important;
+    margin-top: 8px!important;
+    font-size: 14px;
+    font-weight: 300;
+} 
+ul.pagination .page-link {
+    margin-left: 0.3rem !important;
+    border-radius: 0.25rem!important;
+    border: 1px solid #e9ebec;
+    background-color: #fff;
+    color: #405189;
+    font-size: 14px;
+    outline: none;
+    padding: 5px 14px;
+} 
+ul.pagination .page-item.disabled .page-link{
+    color: #878a99;
+    background-color: #fff;
+    cursor: not-allowed;
+} 
+ul.pagination .page-item.active .page-link{
+    background-color: #405189;
+    color: #fff;
+    border-color: #405189;
+    font-weight: 500;
+}
 /* General Tab Start */
 .nav-tabs-custom.card-header-tabs .nav-link{
     padding: 0 1rem 1rem;
@@ -355,6 +398,9 @@ select.form-control::after{
 }
 .border-dashed {
     border-style: dashed!important;
+}
+.border-top-dashed{
+    border-top-style: dashed!important;
 }
 /* Forms Style Ends */
 
@@ -910,8 +956,25 @@ header .icon .count{
     margin-right: -1rem!important;
     margin-left: -1rem!important;
 }
+.mx-n4{
+    margin-right: -1.5rem!important;
+    margin-left: -1.5rem!important;
+}
+.my-n2{
+    margin-top: -.5rem!important;
+    margin-bottom: -.5rem!important;
+}
 .m-n3{
     margin: -1rem -1rem;
+}
+.mt-n1{
+    margin-top: -0.25rem!important;
+}
+.mt-n2{
+    margin-top: -.5rem!important;
+}
+.mt-n3{
+    margin-top: -1rem!important;
 }
 .tasks-box .task-title{
     font-size: 15px;
@@ -1002,3 +1065,28 @@ header .icon .count{
     font-weight: 500;
 }
 /* Task Board Details CSS Ends */
+/* Orders CSS Start */
+.order-timeline .accordion-item{
+    position: relative;
+}
+.order-timeline .accordion-item .accordion-button{
+    background-color: transparent;
+}
+.order-timeline .accordion-item .accordion-button::after{
+    background: none;
+}
+.order-timeline .accordion-item::before{
+    content: "";
+    border-left: 2px dashed rgb(233,235,236);
+    position: absolute;
+    height: 100%;
+    left: 23px;
+}
+.order-timeline .accordion-item:first-child::before{
+    top: 8px;
+}
+.order-timeline .accordion-item:last-child::before{
+    height: 20px;
+    top: 3px;
+}
+/* Orders CSS Ends */

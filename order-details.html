@@ -1,0 +1,720 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Orders Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card shadow">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <img class="img-fluid px-4 py-2" src="assets/images/logo.png" alt="Logo">
+            </a>
+            <hr>
+            <div class="nav-wrapper" data-simplebar>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
+                  <i class='bx bx-home-alt me-2'></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="app-products.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-purchase-tag me-2 bx-rotate-90'></i>
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="orders.html" class="nav-link d-flex align-items-center active">
+                      <i class='bx bxs-cart-download me-2'></i>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="customers.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Customers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Contacts
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dashboard me-2'></i>
+                    Pages
+                  </a>
+                </li>
+                <li>
+                  <a href="projects.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bx-notepad me-2'></i>
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a href="task-board.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bx-task me-2'></i>
+                    Task Board
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-file-blank me-2'></i>
+                    Invoicing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-wallet-alt me-2'></i>
+                    Banking
+                  </a>
+                </li>
+                <li>
+                  <a href="file-manager.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-folder me-2'></i>
+                    File Manager
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-calendar-alt me-2'></i>
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-pencil me-2'></i>
+                    Todo List
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="copyrights">
+                <p class="fw-semibold text-black">Wisoft Modern Dashboard</p>
+                <p>© 2022 All Rights Reserved</p>
+                <p>Made with <i class='bx bxs-heart text-danger'></i> by Wisoft</p>
+            </div>
+          </div>
+        </div>
+        <div class="main col px-3">
+            <div class="container-fluid">
+                <header>
+                    <div class="row">
+                      <div class="col-auto my-auto pe-0">
+                        <a role="button" id="sidebarToggle">
+                          <svg class="ham" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 h -40" />
+                            <path
+                                  class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+                          </svg>
+                        </a>
+                      </div>
+                        <div class="col col-md-6 me-md-auto my-auto">
+                            <h1 class="heading mb-1">Orders Details</h1>
+                        </div>
+                        <div class="col col-md-4 justify-content-end align-items-center d-flex">
+                            <div class="icon fs-4 px-2 position-relative">
+                                <a href="#" class="bx bx-message-square-dots align-middle link-dark text-decoration-none" id="dropdownMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="count">5</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownMessages" aria-labelledby="dropdownMessages" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <div class="d-flex align-items-center justify-content-center py-3">
+                                      <button class="btn bg-primary border-0 text-white fs-s">View All Messages</button>
+                                    </div>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="icon fs-4 px-2 me-2 dropdown">
+                                <a href="#" class="bx bx-bell align-middle link-dark text-decoration-none" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                  <span class="count bg-primary">11</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownNotifications" aria-labelledby="dropdownNotifications" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                              <a href="#" class="d-flex align-items-center text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false" onclick="showToast()">
+                                <img src="https://github.com/nadeemdsgnr.png" alt="" width="50" height="50" class="rounded me-2">
+                              </a>
+                              <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownUser" aria-labelledby="dropdownUser" data-popper-placement="bottom-end">
+                                <p class="text-dull px-3 mb-2">Welcome Nadeem</p>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="user-profile.html"><i class='me-1 bx bxs-user-circle text-dull'></i>Profile</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-message-detail text-dull'></i>Messages</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-help-circle text-dull'></i>Help</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bx-log-out-circle text-dull'></i>Sign out</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="orders-details mt-3 position-relative">
+                    <div class="row">
+                        <div class="col-xl-9">
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="card-title flex-grow-1 mb-0">Order #VL2667</h5>
+                                        <div class="flex-shrink-0">
+                                            <a href="#" class="btn btn-success btn-sm"><i class="bx bx-download align-middle me-1"></i> Invoice</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-card m-n3" data-simplebar>
+                                        <table class="table table-nowrap align-middle table-borderless mb-0 fs-s">
+                                            <thead class="table-light text-muted">
+                                                <tr>
+                                                    <th class="text-muted fs-xs" scope="col" width="420px">Product Details</th>
+                                                    <th class="text-muted fs-xs" scope="col" width="100px">Item Price</th>
+                                                    <th class="text-muted fs-xs" scope="col" width="50px">Qty</th>
+                                                    <th class="text-muted fs-xs" scope="col" width="100px">Rating</th>
+                                                    <th class="text-muted fs-xs text-end" scope="col" width="160px" class="text-end">Total Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                                                <img src="assets/images/products/img-8.png" alt="" class="img-fluid d-block">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3 fs-s">
+                                                                <h5 class="fs-s mb-1 fw-normal"><a href="#" class="text-dark text-decoration-none">Sweatshirt for Men (Pink)</a></h5>
+                                                                <p class="text-muted mb-0">Color: <span class="fw-medium">Pink</span></p>
+                                                                <p class="text-muted mb-0">Size: <span class="fw-medium">M</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>$119.99</td>
+                                                    <td>02</td>
+                                                    <td>
+                                                        <div class="text-warning fs-s">
+                                                            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star-half"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium text-end fs-s">
+                                                        $239.98
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                                                <img src="assets/images/products/img-7.png" alt="" class="img-fluid d-block">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3 fs-s">
+                                                                <h5 class="fs-s mb-1 fw-normal"><a href="#" class="text-dark text-decoration-none">Noise NoiseFit Endure Smart Watch</a></h5>
+                                                                <p class="text-muted mb-0">Color: <span class="fw-medium">Black</span></p>
+                                                                <p class="text-muted mb-0">Size: <span class="fw-medium">32.5mm</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>$94.99</td>
+                                                    <td>01</td>
+                                                    <td>
+                                                        <div class="text-warning fs-s">
+                                                            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star-half"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium text-end fs-s">
+                                                        $94.99
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                                                <img src="assets/images/products/img-3.png" alt="" class="img-fluid d-block">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3 fs-s">
+                                                                <h5 class="fs-s mb-1 fw-normal"><a href="#" class="text-dark text-decoration-none">350 ml Glass Grocery Container</a></h5>
+                                                                <p class="text-muted mb-0">Color: <span class="fw-medium">White</span></p>
+                                                                <p class="text-muted mb-0">Size: <span class="fw-medium">350 ml</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>$24.99</td>
+                                                    <td>01</td>
+                                                    <td>
+                                                        <div class="text-warning fs-s">
+                                                            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star-half"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium text-end fs-s">
+                                                        $24.99
+                                                    </td>
+                                                </tr>
+                                                <tr class="border-top border-top-dashed">
+                                                    <td colspan="3"></td>
+                                                    <td colspan="2" class="fw-medium p-0">
+                                                        <table class="table table-borderless mb-0 fs-s">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Sub Total :</td>
+                                                                    <td class="text-end">$359.96</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Discount <span class="text-muted">(WISOFT15)</span> : :</td>
+                                                                    <td class="text-end">-$53.99</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Shipping Charge :</td>
+                                                                    <td class="text-end">$65.00</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Estimated Tax :</td>
+                                                                    <td class="text-end">$44.99</td>
+                                                                </tr>
+                                                                <tr class="border-top border-top-dashed">
+                                                                    <th scope="row">Total (USD) :</th>
+                                                                    <th class="text-end">$415.96</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-->
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <div class="d-sm-flex align-items-center">
+                                        <h5 class="card-title flex-grow-1 mb-0">Order Status</h5>
+                                        <div class="flex-shrink-0 mt-2 mt-sm-0">
+                                            <a href="javasccript:void(0;)" class="btn bg-soft-info btn-sm mt-2 mt-sm-0 me-2"><i class="bx bx-map align-middle me-1"></i> Change Address</a>
+                                            <a href="javasccript:void(0;)" class="btn bg-soft-danger btn-sm mt-2 mt-sm-0"><i class="bx bxs-x-square align-middle me-1"></i> Cancel Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="order-timeline">
+                                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="headingOne">
+                                                    <a class="accordion-button text-decoration-none p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-success rounded-circle">
+                                                                    <i class="bx bx-shopping-bag"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="fs-s mb-0 fw-semibold">Order Placed - <span class="fw-normal">Wed, 15 Dec 2021</span></h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body fs-xs ms-2 ps-5 pt-0">
+                                                        <h6 class="mb-1 fs-s">An order has been placed.</h6>
+                                                        <p class="text-muted">Wed, 15 Dec 2021 - 05:34PM</p>
+
+                                                        <h6 class="mb-1 fs-s">Seller has proccessed your order.</h6>
+                                                        <p class="text-muted mb-0">Thu, 16 Dec 2021 - 5:48AM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="headingTwo">
+                                                    <a class="accordion-button text-decoration-none p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-success rounded-circle">
+                                                                    <i class="bx bx-gift"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="fs-s mb-1 fw-semibold">Packed - <span class="fw-normal">Thu, 16 Dec 2021</span></h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body fs-xs ms-2 ps-5 pt-0">
+                                                        <h6 class="mb-1 fs-s">Your Item has been picked up by courier patner</h6>
+                                                        <p class="text-muted mb-0">Fri, 17 Dec 2021 - 9:45AM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="headingThree">
+                                                    <a class="accordion-button text-decoration-none p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-success rounded-circle">
+                                                                    <i class="bx bxs-truck"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="fs-s mb-1 fw-semibold">Shipping - <span class="fw-normal">Thu, 16 Dec 2021</span></h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body fs-xs ms-2 ps-5 pt-0">
+                                                        <h6 class="fs-s">RQK Logistics - MFDS1400457854</h6>
+                                                        <h6 class="mb-1 fs-s">Your item has been shipped.</h6>
+                                                        <p class="text-muted mb-0">Sat, 18 Dec 2021 - 4.54PM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="headingFour">
+                                                    <a class="accordion-button text-decoration-none p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-soft-success rounded-circle">
+                                                                    <i class="bx bx-box"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="fs-s mb-0 fw-semibold">Out For Delivery</h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="headingFive">
+                                                    <a class="accordion-button text-decoration-none p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFile" aria-expanded="false">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-soft-success rounded-circle">
+                                                                    <i class="bx bx-package"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="fs-s mb-0 fw-semibold">Delivered</h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end accordion-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <div class="d-flex">
+                                        <h5 class="card-title flex-grow-1 mb-0"><i class="bx bxs-truck align-middle me-1 text-muted"></i> Logistics Details</h5>
+                                        <div class="flex-shrink-0">
+                                            <a href="javascript:void(0);" class="badge bg-soft-primary fs-xs text-decoration-none">Track Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/uetqnvvg.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c" style="width:80px;height:80px"></lord-icon>
+                                        <h5 class="fs-s mt-2">RQK Logistics</h5>
+                                        <p class="text-muted mb-0 fs-xs">ID: MFDS1400457854</p>
+                                        <p class="text-muted mb-0 fs-xs">Payment Mode : Debit Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-->
+
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <div class="d-flex">
+                                        <h5 class="card-title flex-grow-1 mb-0">Customer Details</h5>
+                                        <div class="flex-shrink-0">
+                                            <a href="javascript:void(0);" class="btn-link text-decoration-none">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0 vstack gap-3">
+                                        <li>
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="avatar-sm rounded">
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <h6 class="fs-s mb-1">Joseph Parkers</h6>
+                                                    <p class="text-muted mb-0 fs-xs">Customer</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="fs-xs"><i class="bx bx-envelope me-2 align-middle text-muted fs-s"></i>josephparker@gmail.com</li>
+                                        <li class="fs-xs"><i class="bx bx-phone me-2 align-middle text-muted fs-s"></i>+(256) 245451 441</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end card-->
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0"><i class="bx bx-map align-middle me-1 text-muted"></i> Billing Address</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled vstack gap-2 fs-xs mb-0">
+                                        <li class="fw-medium fs-s">Joseph Parker</li>
+                                        <li>+(256) 245451 451</li>
+                                        <li>2186 Joyce Street Rocky Mount</li>
+                                        <li>New York - 25645</li>
+                                        <li>United States</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end card-->
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0"><i class="bx bx-map align-middle me-1 text-muted"></i> Shipping Address</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled vstack gap-2 fs-xs mb-0">
+                                        <li class="fw-medium fs-s">Joseph Parker</li>
+                                        <li>+(256) 245451 451</li>
+                                        <li>2186 Joyce Street Rocky Mount</li>
+                                        <li>California - 24567</li>
+                                        <li>United States</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end card-->
+
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0"><i class="bx bx-check-shield align-bottom me-1 text-muted"></i> Payment Details</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="flex-shrink-0">
+                                            <p class="text-muted mb-0 fs-xs">Transactions:</p>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h6 class="mb-0 fs-xs">#VLZ124561278124</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="flex-shrink-0">
+                                            <p class="text-muted mb-0 fs-xs">Payment Method:</p>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h6 class="mb-0 fs-xs">Debit Card</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="flex-shrink-0">
+                                            <p class="text-muted mb-0 fs-xs">Card Holder Name:</p>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h6 class="mb-0 fs-xs">Joseph Parker</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="flex-shrink-0">
+                                            <p class="text-muted mb-0 fs-xs">Card Number:</p>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h6 class="mb-0 fs-xs">xxxx xxxx xxxx 2456</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <p class="text-muted mb-0 fs-xs">Total Amount:</p>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h6 class="mb-0 fs-xs">$415.96</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="assets/js/lord-icon-2.1.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script>
+    // Sidebar Toggle Start
+    $("#sidebarToggle").click( function(){
+        $("#sidebar").toggleClass("hide")
+    });
+    // Sidebar Toggle Ends
+    </script>
+  </body>
+</html>

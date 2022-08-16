@@ -1,0 +1,738 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Projects</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone@6.0.0-beta.1/dist/dropzone.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-white card shadow">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <img class="img-fluid px-4 py-2" src="assets/images/logo.png" alt="Logo">
+            </a>
+            <hr>
+            <div class="nav-wrapper" data-simplebar>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
+                  <i class='bx bx-home-alt me-2'></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="app-products.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-purchase-tag me-2 bx-rotate-90'></i>
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="orders.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-cart-download me-2'></i>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="customers.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Customers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-envelope me-2'></i>
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-user me-2'></i>
+                    Contacts
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-dashboard me-2'></i>
+                    Pages
+                  </a>
+                </li>
+                <li>
+                  <a href="projects.html" class="nav-link d-flex align-items-center active">
+                      <i class='bx bx-notepad me-2'></i>
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a href="task-board.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bx-task me-2'></i>
+                    Task Board
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-file-blank me-2'></i>
+                    Invoicing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-wallet-alt me-2'></i>
+                    Banking
+                  </a>
+                </li>
+                <li>
+                  <a href="file-manager.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-folder me-2'></i>
+                    File Manager
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-calendar-alt me-2'></i>
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link d-flex align-items-center">
+                      <i class='bx bxs-pencil me-2'></i>
+                    Todo List
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="copyrights">
+                <p class="fw-semibold text-black">Wisoft Modern Dashboard</p>
+                <p>© 2022 All Rights Reserved</p>
+                <p>Made with <i class='bx bxs-heart text-danger'></i> by Wisoft</p>
+            </div>
+          </div>
+        </div>
+        <div class="main col px-3">
+            <div class="container-fluid">
+                <header>
+                    <div class="row">
+                      <div class="col-auto my-auto pe-0">
+                        <a role="button" id="sidebarToggle">
+                          <svg class="ham" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+                            <path
+                                  class="line top"
+                                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                            <path
+                                  class="line middle"
+                                  d="m 70,50 h -40" />
+                            <path
+                                  class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+                          </svg>
+                        </a>
+                      </div>
+                        <div class="col col-md-6 me-md-auto my-auto">
+                            <h1 class="heading mb-1">Create Projects</h1>
+                        </div>
+                        <div class="col col-md-4 justify-content-end align-items-center d-flex">
+                            <div class="icon fs-4 px-2 position-relative">
+                                <a href="#" class="bx bx-message-square-dots align-middle link-dark text-decoration-none" id="dropdownMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="count">5</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownMessages" aria-labelledby="dropdownMessages" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight ps-5" aria-current="true">
+                                      <div class="profile">
+                                        <img class="img-fluid rounded-circle" src="https://github.com/sahilbabu.png" alt="">
+                                      </div>
+                                      <div class="d-flex w-100 align-items-center justify-content-between ps-2">
+                                        <strong class="mb-1">James Lemire</strong>
+                                        <small class="text-muted">30 MIN AGO</small>
+                                      </div>
+                                      <div class="col-12 small ps-2">We talk about a project...</div>
+                                    </a>
+                                    <div class="d-flex align-items-center justify-content-center py-3">
+                                      <button class="btn bg-primary border-0 text-white fs-s">View All Messages</button>
+                                    </div>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="icon fs-4 px-2 me-2 dropdown">
+                                <a href="#" class="bx bx-bell align-middle link-dark text-decoration-none" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                  <span class="count bg-primary">11</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownNotifications" aria-labelledby="dropdownNotifications" data-popper-placement="bottom-end">
+                                  <div class="list-group list-group-flush border-bottom scrollarea" data-simplebar>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5" aria-current="true">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action py-2 lh-tight pe-5">
+                                      <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">Notification Received</strong>
+                                      </div>
+                                      <div class="col-10 small">Some notification content...</div>
+                                      <button type="button" aria-label="Close" class="closeNotification">✖</button>
+                                    </a>
+                                  </div>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                              <a href="#" class="d-flex align-items-center text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false" onclick="showToast()">
+                                <img src="https://github.com/nadeemdsgnr.png" alt="" width="50" height="50" class="rounded me-2">
+                              </a>
+                              <ul class="dropdown-menu text-small shadow border-0 mt-1 dropdownUser" aria-labelledby="dropdownUser" data-popper-placement="bottom-end">
+                                <p class="text-dull px-3 mb-2">Welcome Nadeem</p>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="user-profile.html"><i class='me-1 bx bxs-user-circle text-dull'></i>Profile</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-message-detail text-dull'></i>Messages</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bxs-help-circle text-dull'></i>Help</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"><i class='me-1 bx bx-log-out-circle text-dull'></i>Sign out</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="create-projects mt-3 position-relative">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="project-title-input">Project Title</label>
+                                        <input type="text" class="form-control" id="project-title-input" placeholder="Enter project title">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="project-thumbnail-img">Thumbnail Image</label>
+                                        <input class="form-control" id="project-thumbnail-img" type="file" accept="image/png, image/gif, image/jpeg">
+                                    </div>
+                                    <div class="ckeditor-classic">
+                                        <label class="mb-2">Product Description</label>
+                                        <div id="ckeditor-classic">
+                                            <p>Tommy Hilfiger men striped pink sweatshirt. Crafted with cotton. Material composition is 100% organic cotton. This is one of the world’s leading designer lifestyle brands and is internationally recognized for celebrating the essence of classic American cool style, featuring preppy with a twist designs.</p>
+                                            <ul>
+                                                <li>Full Sleeve</li>
+                                                <li>Cotton</li>
+                                                <li>All Sizes available</li>
+                                                <li>4 Different Color</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 mb-lg-0">
+                                                <label for="priority-input" class="form-label">Priority</label>
+                                                <select class="form-select" id="priority-input">
+                                                    <option value="High" selected>High</option>
+                                                    <option value="Medium">Medium</option>
+                                                    <option value="Low">Low</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 mb-lg-0">
+                                                <label for="status-input" class="form-label">Status</label>
+                                                <select class="form-select" id="status-input">
+                                                    <option value="Inprogress" selected>Inprogress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div>
+                                                <label for="datepicker-deadline-input" class="form-label">Deadline</label>
+                                                <input type="text" class="form-control" id="datepicker-deadline-input" placeholder="Enter due date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0">Attached files</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <p class="text-muted">Add Attached files here.</p>
+
+                                        <div class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple="multiple">
+                                            </div>
+                                            <div class="dz-message needsclick">
+                                                <div class="mb-3">
+                                                    <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                                </div>
+
+                                                <h5 class="fs-6">Drop files here or click to upload.</h5>
+                                            </div>
+                                        </div>
+
+                                        <ul class="list-unstyled mb-0" id="dropzone-preview">
+                                            <li class="mt-2" id="dropzone-preview-list">
+                                                <!-- This is used as the file preview template -->
+                                                <div class="border rounded">
+                                                    <div class="d-flex p-2">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <div class="avatar-sm bg-light rounded">
+                                                                <img src="#" alt="Project-Image" data-dz-thumbnail class="img-fluid rounded d-block" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <div class="pt-1">
+                                                                <h5 class="fs-s mb-1" data-dz-name>&nbsp;</h5>
+                                                                <p class="fs-s text-muted mb-0" data-dz-size></p>
+                                                                <strong class="error text-danger fs-s" data-dz-errormessage></strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-shrink-0 ms-3 my-auto">
+                                                            <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- end dropzon-preview -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                            <div class="text-end mb-4">
+                                <button type="submit" class="btn btn-danger w-sm">Delete</button>
+                                <button type="submit" class="btn btn-secondary w-sm">Draft</button>
+                                <button type="submit" class="btn btn-success w-sm">Create</button>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0">Privacy</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <label for="privacy-status-input" class="form-label">Status</label>
+                                        <select class="form-select" id="privacy-status-input">
+                                            <option value="Private" selected>Private</option>
+                                            <option value="Team">Team</option>
+                                            <option value="Public">Public</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0">Tags</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="categories-input" class="form-label">Categories</label>
+                                        <select class="form-select" id="categories-input">
+                                            <option value="Designing" selected>Designing</option>
+                                            <option value="Development">Development</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="hstack gap-3 align-items-start">
+                                        <div class="flex-grow-1">
+                                            <input class="form-control" placeholder="Enter tags" type="text" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="tags d-inline-block my-3">
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">UI/UX 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">Figma 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">HTML 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">CSS 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">Javascript 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">C# 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                      <a class="tag fs-xs text-white text-break bg-primary rounded p-1 ps-2 text-decoration-none me-2 mb-2">Nodejs 
+                                        <button type="button" aria-label="Close" class="closeNotification bg-transparent border-0 text-white ps-0">✖</button>
+                                      </a>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+                            <div class="card">
+                                <div class="card-header bg-white p-3">
+                                    <h5 class="card-title mb-0">Members</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="lead-input" class="form-label">Team Lead</label>
+                                        <select class="form-select" id="lead-input">
+                                            <option value="Brent Gonzalez" selected>Brent Gonzalez</option>
+                                            <option value="Darline Williams">Darline Williams</option>
+                                            <option value="Sylvia Wright">Sylvia Wright</option>
+                                            <option value="Ellen Smith">Ellen Smith</option>
+                                            <option value="Jeffrey Salazar">Jeffrey Salazar</option>
+                                            <option value="Mark Williams">Mark Williams</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="form-label">Team Members</label>
+                                        <div class="avatar-group">
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                                                <div class="avatar-xs">
+                                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle img-fluid">
+                                                </div>
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
+                                                <div class="avatar-xs">
+                                                    <div class="avatar-title rounded-circle bg-secondary">
+                                                        S
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                                                <div class="avatar-xs">
+                                                    <img src="assets/images/users-avatar-4.jpg" alt="" class="rounded-circle img-fluid">
+                                                </div>
+                                            </a>
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
+                                                <div class="avatar-xs" data-bs-toggle="modal" data-bs-target="#inviteMembersModal">
+                                                    <div class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
+                                                        +
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- inviteMembersModal -->
+    <div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header p-3 ps-4 bg-soft-success">
+                    <h5 class="modal-title" id="inviteMembersModalLabel">Members</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="search-box mb-3">
+                        <input type="text" class="form-control bg-light border-light" placeholder="Search here...">
+                        <i class="bx bx-search search-icon"></i>
+                    </div>
+
+                    <div class="mb-4 d-flex align-items-center">
+                        <div class="me-2">
+                            <h5 class="mb-0 fs-s">Members :</h5>
+                        </div>
+                        <div class="avatar-group justify-content-center">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                                <div class="avatar-xs">
+                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </a>
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
+                                <div class="avatar-xs">
+                                    <div class="avatar-title rounded-circle bg-secondary">
+                                        S
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                                <div class="avatar-xs">
+                                    <img src="assets/images/users-avatar-4.jpg" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mx-n4 px-4" data-simplebar style="max-height: 225px;">
+                        <div class="vstack gap-3">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Nancy Martino</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <div class="avatar-title bg-soft-danger text-danger rounded-circle">
+                                        HB
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Henry Baird</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Frank Hook</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-4.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Jennifer Carter</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <div class="avatar-title bg-soft-success text-success rounded-circle">
+                                        AC
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Alexis Clarke</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-7.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="#" class="text-body d-block text-decoration-none">Joseph Parker</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn bg-soft-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                        </div>
+                        <!-- end list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-soft-danger w-xs" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success w-xs">Invite</button>
+                </div>
+            </div>
+            <!-- end modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+    <!-- end modal -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="assets/js/lord-icon-2.1.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script>
+    // Sidebar Toggle Start
+    $("#sidebarToggle").click( function(){
+        $("#sidebar").toggleClass("hide")
+    });
+    // Sidebar Toggle Ends
+    // Text Editor Start
+    ClassicEditor
+        .create( document.querySelector( '#ckeditor-classic' ),{         
+            fontSize: {
+                options: [
+                    '12'
+                ]
+            },
+            fontFamily: {
+                options: [
+                    'Poppins, sans-serif',
+                ]
+            }
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+    // Text Editor Ends
+    // Dropzone Start
+    var dropzonePreviewNode = document.querySelector("#dropzone-preview-list");
+        dropzonePreviewNode.itemid = "";
+        var previewTemplate = dropzonePreviewNode.parentNode.innerHTML;
+        dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode);
+        var dropzone = new Dropzone(".dropzone", {
+            url: "https://httpbin.org/post",
+            method: "post",
+            previewTemplate: previewTemplate,
+            previewsContainer: "#dropzone-preview"
+        });             
+    // Dropzone Ends
+    // Datepicker Start
+    $("#datepicker-deadline-input").flatpickr();
+    // Datepicker Ends
+    </script>
+  </body>
+</html>
