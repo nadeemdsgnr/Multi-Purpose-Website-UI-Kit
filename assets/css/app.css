@@ -402,6 +402,9 @@ select.form-control::after{
 .border-top-dashed{
     border-top-style: dashed!important;
 }
+.border-bottom-dashed{
+    border-bottom-style: dashed!important;
+}
 /* Forms Style Ends */
 
 /* Fixed minimum width Start */
@@ -975,6 +978,9 @@ header .icon .count{
 }
 .mt-n3{
     margin-top: -1rem!important;
+}
+.my-n4{
+    margin-top: -1.5rem!important;
 }
 .tasks-box .task-title{
     font-size: 15px;
