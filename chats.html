@@ -24,7 +24,7 @@
             <div class="nav-wrapper" data-simplebar>
               <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                  <a href="index.html" class="nav-link d-flex align-items-center" aria-current="page">
+                  <a href="index.html" class="nav-link d-flex align-items-center">
                   <i class='bx bx-home-alt me-2'></i>
                     Dashboard
                   </a>
@@ -54,7 +54,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link d-flex align-items-center">
+                  <a href="contacts.html" class="nav-link d-flex align-items-center">
                       <i class='bx bxs-user me-2'></i>
                     Contacts
                   </a>
@@ -81,6 +81,12 @@
                   <a href="chats.html" class="nav-link d-flex align-items-center active">
                       <i class='bx bxs-message-square-dots me-2'></i>
                     Chat
+                  </a>
+                </li>
+                <li>
+                  <a href="notes.html" class="nav-link d-flex align-items-center">
+                      <i class='bx bx-note me-2'></i>
+                    Notes
                   </a>
                 </li>
                 <li>
@@ -332,10 +338,10 @@
                                                 <h5 class="mb-4 fs-6">Chats</h5>
                                             </div>
                                             <div class="flex-shrink-0">
-                                                <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="bottom" title="Add Contact">
+                                                <div>
         
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn bg-soft-success fs-xs btn-sm">
+                                                    <button type="button" class="btn bg-soft-success fs-xs btn-sm" data-bs-toggle="modal" data-bs-target="#inviteMembersModal">
                                                         <i class="bx bx-plus align-middle"></i>
                                                     </button>
                                                 </div>
@@ -732,7 +738,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:07 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle"></i></span></div>
+                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:07 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle fs-6"></i></span></div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -758,7 +764,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:08 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle"></i></span></div>
+                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:08 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle fs-6"></i></span></div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -804,7 +810,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:10 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle"></i></span></div>
+                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:10 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle fs-6"></i></span></div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -830,7 +836,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:12 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle"></i></span></div>
+                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:12 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle fs-6"></i></span></div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -894,7 +900,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:30 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle"></i></span></div>
+                                                                        <div class="conversation-name fs-xs"><small class="text-muted time">09:30 am</small> <span class="text-success check-message-icon"><i class="bx bx-check-double align-middle fs-6"></i></span></div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -976,6 +982,134 @@
         </div>
     </div>
 
+    <!-- start modal -->
+    <div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header p-3 ps-4 bg-soft-success">
+                    <h5 class="modal-title" id="inviteMembersModalLabel">Team Members</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="search-box mb-3">
+                        <input type="text" class="form-control bg-light border-light" placeholder="Search here...">
+                        <i class="bx bx-search search-icon"></i>
+                    </div>
+
+                    <div class="mb-4 d-flex align-items-center">
+                        <div class="me-2">
+                            <h5 class="mb-0 fs-s">Members :</h5>
+                        </div>
+                        <div class="avatar-group justify-content-center">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya Noble">
+                                <div class="avatar-xs">
+                                    <img src="assets/images/users-avatar-10.jpg" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </a>
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas Taylor">
+                                <div class="avatar-xs">
+                                    <img src="assets/images/users-avatar-8.jpg" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </a>
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy Martino">
+                                <div class="avatar-xs">
+                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mx-n4 px-4" data-simplebar style="max-height: 225px;">
+                        <div class="vstack gap-3">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-2.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Nancy Martino</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <div class="avatar-title bg-soft-danger text-danger rounded-circle">
+                                        HB
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Henry Baird</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-3.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Frank Hook</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-4.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Jennifer Carter</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <div class="avatar-title bg-soft-success text-success rounded-circle">
+                                        AC
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Alexis Clarke</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-xs flex-shrink-0 me-3">
+                                    <img src="assets/images/users-avatar-7.jpg" alt="" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-s mb-0"><a href="javascript:void(0);" class="text-body d-block text-decoration-none">Joseph Parker</a></h5>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn btn-light btn-sm">Add</button>
+                                </div>
+                            </div>
+                            <!-- end member item -->
+                        </div>
+                        <!-- end list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-soft-danger w-xs" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success w-xs">Assigned</button>
+                </div>
+            </div>
+            <!-- end modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+    <!-- end modal -->
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

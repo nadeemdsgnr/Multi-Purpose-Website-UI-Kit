@@ -121,6 +121,24 @@ body{
     background-color: #cff4fc !important;
     border-color: #b6effb !important;
 }
+.text-hover-primary:hover{
+    color: #0d6efd !important;
+}
+.text-hover-secondary:hover{
+    color: #6c757d !important;
+}
+.text-hover-success:hover{
+    color: #198754 !important;
+}
+.text-hover-info:hover{
+    color: #0dcaf0 !important;
+}
+.text-hover-warning:hover{
+    color: #ffc107 !important;
+}
+.text-hover-danger:hover{
+    color: #dc3545 !important;
+}
 .dropdown-item.active i, .dropdown-item:active i{
     color: var(--text-white) !important;
 }
@@ -207,6 +225,12 @@ button:focus:not(:focus-visible),
 .form-select:focus,
 .page-link:focus{
     box-shadow: none;
+}
+a:focus-within{
+    outline: 0;
+}
+button:focus-within{
+    outline: 0;
 }
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:focus-within,
@@ -1229,3 +1253,28 @@ header .icon .count{
     color: var(--text-white);
 }
 /* Projects details CSS Ends */
+
+/* Note List CSS Starts */
+.list-note .note p.desc{
+    font-size: 13px;
+}
+.list-note .note{
+    border-bottom: 4px solid #6c757d ;
+}
+.list-note .note.personal{
+    border-color: #0f5132 !important;
+    background-color: #d1e7dd !important;
+}
+.list-note .note.work{
+    border-color: #664d03 !important;
+    background-color: #fff3cd !important;
+}
+.list-note .note.social{
+    border-color: #055160 !important;
+    background-color: #cff4fc !important;
+}
+.list-note .note.important{
+    border-color: #842029 !important;
+    background-color: #f8d7da !important;
+}
+/* Note List CSS Ends */

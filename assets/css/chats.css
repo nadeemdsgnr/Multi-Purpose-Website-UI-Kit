@@ -255,7 +255,7 @@
 }
 .chat-conversation .right .conversation-list .ctext-wrap .ctext-wrap-content {
     order: 2;
-    background-color: rgba(10 179 156 0.15);
+    background-color: rgba(10, 179, 156, 0.15);
     color: #0ab39c;
     text-align: right;
     box-shadow: none;
