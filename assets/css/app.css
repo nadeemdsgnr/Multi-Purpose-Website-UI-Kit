@@ -12,6 +12,7 @@
     --filterbar-width: 240px;
     --border-color:#e9ebec;
     --heading-color:#495056;
+    --text-theme:#405189;
 }
 * {
     margin: 0;
@@ -72,6 +73,9 @@ body{
 }
 .text-dull{
     color: var(--text-light);
+}
+.text-theme{
+    color: var(--text-theme);
 }
 .bgprimary{
     background-color: var(--primary-bgcolor);
@@ -1010,12 +1014,33 @@ header .icon .count{
     margin-right: -1.5rem!important;
     margin-left: -1.5rem!important;
 }
+.my-n1{
+    margin-top: -0.25rem!important;
+    margin-bottom: -0.25rem!important;
+}
 .my-n2{
     margin-top: -.5rem!important;
     margin-bottom: -.5rem!important;
 }
+.my-n3{
+    margin-top: -1rem!important;
+    margin-bottom: -1rem!important;
+}
+.my-n4{
+    margin-top: -1.5rem!important;
+    margin-bottom: -1.5rem!important;
+}
+.m-n1{
+    margin: -0.25rem -0.25rem !important;
+}
+.m-n2{
+    margin: -.5rem -.5rem !important;
+}
 .m-n3{
-    margin: -1rem -1rem;
+    margin: -1rem -1rem !important;
+}
+.m-n4{
+    margin: -1.5rem -1.5rem !important;
 }
 .mt-n1{
     margin-top: -0.25rem!important;
@@ -1026,7 +1051,7 @@ header .icon .count{
 .mt-n3{
     margin-top: -1rem!important;
 }
-.my-n4{
+.mt-n4{
     margin-top: -1.5rem!important;
 }
 .tasks-box .task-title{
@@ -1278,3 +1303,120 @@ header .icon .count{
     background-color: #f8d7da !important;
 }
 /* Note List CSS Ends */
+
+/* Error Pages CSS Start */
+.auth-page-wrapper .auth-page-content{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.auth-one-bg-position{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 380px;
+}
+.auth-one-bg{
+    background-image: url("../images/auth-one-bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.auth-one-bg .bg-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    background: -webkit-gradient(linear,left top,right top,from(#364574),to(#405189));
+    background: linear-gradient(to right,#364574,#405189);
+    opacity: 0.9;
+}
+.auth-one-bg .bg-overlay.sendback{
+    z-index: 1;
+}
+.bg-overlay.sendback + div{
+    z-index: 2;
+}
+.auth-one-bg .shape{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.auth-one-bg .shape>svg {
+    width: 100%;
+    height: auto;
+    fill: #f3f3f9;
+}
+.particles-js-canvas-el{
+    position: relative;
+}
+.error-basic-img{
+    max-width: 450px;
+}
+.auth-bg-cover{
+    background: linear-gradient(-45deg,#405189 50%,#0ab39c);
+}
+.auth-bg-cover>.bg-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    background-image: url(../images/cover-pattern.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    background-color: transparent;
+}
+.error-500 .title {
+    font-size: 250px;
+}
+.error-500 .error-500-img {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+@keyframes errorAnimation {
+    0% { transform: translateX(0%);}
+    15% { transform: translateX(-25%) rotate(-5deg);}
+    30% { transform: translateX(20%) rotate(3deg);}
+    45% { transform: translateX(-15%) rotate(-3deg);}
+    60% { transform: translateX(10%) rotate(2deg);}
+    75% { transform: translateX(-5%) rotate(-1deg);}
+    100% { transform: translateX(0%);}
+}
+.error-img {
+    animation: errorAnimation 20s infinite;
+}
+.signin-other-title{
+    position: relative;
+}
+.signin-other-title:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    border-top: 1px dashed #e9ebec;
+    top: 10px;
+}
+.signin-other-title .title{
+    display: inline-block;
+    position: relative;
+    z-index: 9;
+    background-color: var(--text-white);
+    padding: 2px 16px;
+}
+/* Error Pages CSS Ends */
